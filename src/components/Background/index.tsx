@@ -5,7 +5,7 @@ import Line from './Line';
 
 function Background() {
   return (
-    <div id="background" className='relative h-screen w-full overflow-hidden'>
+    <div id="background" className='z-0 absolute h-screen w-full overflow-hidden'>
       <div className="absolute inset-0 flex flex-col gap-10 md:gap-12 lg:gap-16"
           style={{
             transformOrigin: "center",
@@ -48,6 +48,8 @@ function Background() {
         </LineGroup>
 
         <LineGroup>
+          <Line size={1} />
+          <div style={{width: "100px"}}></div>
           <Line size={4} />
           <Line size={2} />
           <div style={{width: "650px"}}></div>
