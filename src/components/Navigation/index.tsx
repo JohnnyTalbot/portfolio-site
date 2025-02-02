@@ -16,7 +16,7 @@ function Navigation({currentView, setCurrentView, setShowNav} : MyComponentProps
         <h1 className='font-chakra text-5xl md:text-7xl text-center mt-40 lg:mt-48'>Welcome!</h1>
       </div>
       <div className='z-10 relative'>
-        <div className='m-8 px-16 md:px-28 lg:px-32 py-10 md:py-20 bg-black bg-opacity-30 grid grid-cols-2 gap-x-18 md:gap-x-24 gap-y-10 text-4xl md:text-6xl'
+        <div className='m-8 px-8 sm:px-12 md:px-28 lg:px-32 py-10 md:py-20 bg-black bg-opacity-30 grid grid-cols-2 gap-x-18 md:gap-x-24 gap-y-10 text-4xl md:text-6xl'
           style={{border: "3px solid #5A7AFB"}}>
               <p 
               className='main-text-shadow cursor-pointer hover:underline underline-offset-8 ease-in ease-out duration-75'
