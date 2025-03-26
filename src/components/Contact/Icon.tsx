@@ -1,21 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react'
 
+import Star from './Star';
+import StarExplosion from './StarExplosion';
+
 interface IconProps {
   icon: string;
   style: React.CSSProperties;
 }
 
-type starProps = {
-  position: { top: number; left: number; }
-  direction: { x: number; y: number };
-  offset: { x: number; y: number };
-  distance: number;
-}
-
 function Icon({icon, style} : IconProps) {
   const [starsShow, setStarsShow] = useState(false)
   const [starsPosition, setStarsPosition] = useState<{top: number, left: number} | null>(null)
-  const [iconSize, setIconSize] = useState<number | null>(null)
+  const [iconSize, setIconSize] = useState(25)
 
   const targetRef = useRef<SVGSVGElement>(null)
 
@@ -24,7 +20,7 @@ function Icon({icon, style} : IconProps) {
       const { top, left, width, height } = targetRef.current.getBoundingClientRect();
       setStarsPosition({
         top: top + height/2,
-        left: left + width/2,
+        left: left + width/2
 
       });
       setIconSize(width);
@@ -89,77 +85,13 @@ function Icon({icon, style} : IconProps) {
     :
     <div></div>}
 
-    {starsPosition && starsShow && (
+    {starsPosition && (
       <div>
-        <Star 
-          position={starsPosition}
-          direction={{x: 50, y: 50}}
-          offset={{x: 0, y: 0}}
-          distance={50}
-          />
-        <Star 
-          position={starsPosition}
-          direction={{x: -50, y: -50}}
-          offset={{x: 0, y: 0}}
-          distance={50}
-          />
+        <StarExplosion position={starsPosition} iconSize={iconSize} starsShow={starsShow} />
       </div>
     )}
     </div>
   )
 }
-
-const Star: React.FC<starProps> = ({ position, direction, offset, distance }) => {
-  const [starPosition, setStarPosition] = useState(position);
-  const [hasMoved, setHasMoved] = useState(false);
-  
-  useEffect(() => {
-    if (hasMoved) return;
-
-    const moveStar = setInterval(() => {
-      setStarPosition(prevPosition => {
-        // Calculate the distance moved so far
-        const distanceMoved = Math.sqrt(
-          Math.pow(prevPosition.top - position.top, 2) + Math.pow(prevPosition.left - position.left, 2)
-        );
-
-        // If the star has moved the desired distance, stop the animation
-        if (distanceMoved >= distance) {
-          clearInterval(moveStar);
-          setHasMoved(true);
-          return prevPosition;
-        }
-
-        // Otherwise, continue moving the star
-        return {
-          top: prevPosition.top + direction.y,
-          left: prevPosition.left + direction.x,
-        };
-      });
-    }, 100);
-
-    return () => clearInterval(moveStar);
-  }, [direction, position, distance, hasMoved]);
-
-  return (
-    <div
-      style={{
-        position: "absolute",
-        top: `${starPosition.top + offset.y}px`,
-        left: `${starPosition.left + offset.x}px`,
-        transform: 'translate(-50%, -50%)',
-        borderRadius: "100%",
-        backgroundColor: "#FAF570",
-        filter: 'drop-shadow(0px 0px 3px #FFFFFF)',
-        width: "5px",
-        height: "5px",
-        zIndex: 10,
-        opacity: 1,
-        transition: "all 0.3s ease",
-      }}
-    />
-  );
-};
-
 
 export default Icon

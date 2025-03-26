@@ -6,7 +6,7 @@ import Navigation from "@/components/Navigation";
 import Background from "@/components/Background";
 import About from "@/components/About";
 import Experience from '@/components/Experience';
-import Projects from '@/components/projects';
+import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 
 export default function Home() {
