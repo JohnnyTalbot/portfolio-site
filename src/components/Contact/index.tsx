@@ -1,12 +1,15 @@
 import React from 'react';
-
 import Icon from './Icon';
 
+interface ContactProps {
+  isMobile: boolean;
+}
+
 const iconMarkers = [
-  {icon: "instagram", x: '10%', y: '80%'},
-  {icon: "linkedin", x: '25%', y: '40%'},
-  {icon: "github", x: '44%', y: '75%'},
-  {icon: "phone", x: '68%', y: '60%'},
+  {icon: "instagram", x: '10%', y: '68%'},
+  {icon: "linkedin", x: '30%', y: '35%'},
+  {icon: "github", x: '44%', y: '80%'},
+  {icon: "phone", x: '65%', y: '55%'},
   {icon: "email", x: '82%', y: '20%'},
 ]
 
@@ -18,7 +21,7 @@ const starMarkers = [
   {x: '20%', y: '40%'},
 ]
 
-function Contact() {
+function Contact({isMobile}: ContactProps) {
   return (
     <div id="contact"
       className='relative flex justify-center items-center w-screen h-screen'
@@ -39,16 +42,16 @@ function Contact() {
               position: "absolute",
               zIndex: 20,
               filter: 'drop-shadow(0px 0px 3px #FFFFFF)',
-              left: marker.x,
-              top: marker.y,
+              left: isMobile ? marker.y : marker.x,
+              top: isMobile ? marker.x : marker.y,
               transform: 'translate(-50%, -50%)',
-              width: "5%",
+              width: "60px",
               height: "auto"
             }}
             />
         ))}
 
-        {starMarkers.map((marker, index) => (
+        {/* {starMarkers.map((marker, index) => (
           <div 
           key={index}
           style={{
@@ -62,7 +65,7 @@ function Contact() {
             width: "5px",
             height: "5px",
           }}></div>
-        ))}
+        ))} */}
       </div>
     </div>
   )

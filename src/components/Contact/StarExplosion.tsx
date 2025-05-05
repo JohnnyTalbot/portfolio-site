@@ -15,15 +15,22 @@ function StarExplosion({ position, iconSize, starsShow }: StarExplosionProps) {
 
   useEffect(() => {
     if (starsShow) {
-      setStars(
-        Array.from({ length: NUM_STARS }, () => ({
+      setStars([
+        ...Array.from({ length: Math.round(NUM_STARS * 7/10) }, () => ({
           direction: {
             x: (Math.random() - 0.5) * 4,
             y: (Math.random() - 0.5) * 4,
           },
-          distance: (Math.random() * iconSize) * 0.7 + iconSize,
-        }))
-      );
+          distance: (Math.random() * iconSize) * 0.5 + iconSize, // Closer group
+        })),
+        ...Array.from({ length: Math.round(NUM_STARS * 3/10) }, () => ({
+          direction: {
+            x: (Math.random() - 0.5) * 4,
+            y: (Math.random() - 0.5) * 4,
+          },
+          distance: (Math.random() * iconSize) + iconSize * 1.5, // Farther group
+        })),
+      ]);
 
       setTimeout(() => setVisible(true), 50);
     } else {
