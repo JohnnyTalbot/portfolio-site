@@ -7,6 +7,7 @@ interface ProjectProps {
  projectsData: Array<{
    name: string;
    description: string;
+   skills: string[];
    image: string;
  }>;
 }
@@ -24,18 +25,20 @@ function ProjectList({ projectsData }: ProjectProps) {
         const angle = (i * 360) / projectsData.length - 90;
         const radius = 175; // same as half of 350px
         const rSmall = 30; // radius of small circle
-        const x = radius + (radius+(rSmall*1.5)) * Math.cos((angle * Math.PI) / 180) - rSmall;
-        const y = radius + (radius+(rSmall*1.5)) * Math.sin((angle * Math.PI) / 180) - rSmall;
+        const x = radius + (radius+(rSmall*2)) * Math.cos((angle * Math.PI) / 180) - rSmall;
+        const y = radius + (radius+(rSmall*2)) * Math.sin((angle * Math.PI) / 180) - rSmall;
 
         return (
           <div
             key={i}
-            className="absolute p-[3px] rounded-full bg-gradient-to-r from-blue-500 to-black-400"
+            className="absolute p-[3px] rounded-full bg-gradient-to-r from-blue-500 to-black-400 cursor-pointer"
             style={{
               height: `${rSmall * 2}px`,
               width: `${rSmall * 2}px`,
               top: `${y}px`,
               left: `${x}px`,
+              boxShadow: currentProject.name == project.name ? "0 0 10px rgba(236, 252, 94, 0.87)" : "none",
+              transition: "0.2s ease-in-out",
             }}
             onMouseEnter={() => setCurrentProject(project)}
           >
