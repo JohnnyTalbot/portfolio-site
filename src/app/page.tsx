@@ -48,7 +48,7 @@ export default function Home() {
   return (
     <div>
       <Background />
-      <main className="z-10 relative overflow-hidden">
+      <main className="z-10 relative overflow-hidden w-full h-screen">
         {showNav && 
         <Navigation 
           currentView={currentView} 
