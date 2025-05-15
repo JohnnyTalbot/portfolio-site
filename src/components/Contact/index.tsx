@@ -38,15 +38,16 @@ function Contact({isMobile}: ContactProps) {
           <Icon 
             key={index}
             icon={marker.icon}
+            className="translate-x-[-50%] translate-y-[-50%] hover:scale-125 transition-transform duration-500"
             style={{
               position: "absolute",
               zIndex: 20,
               filter: 'drop-shadow(0px 0px 3px #FFFFFF)',
               left: isMobile ? marker.y : marker.x,
               top: isMobile ? marker.x : marker.y,
-              transform: 'translate(-50%, -50%)',
               width: "60px",
-              height: "auto"
+              height: "auto",
+              cursor: "pointer",
             }}
             />
         ))}

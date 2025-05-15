@@ -6,9 +6,10 @@ import StarExplosion from './StarExplosion';
 interface IconProps {
   icon: string;
   style: React.CSSProperties;
+  className?: string;
 }
 
-function Icon({icon, style} : IconProps) {
+function Icon({icon, style, className} : IconProps) {
   const [starsShow, setStarsShow] = useState(false)
   const [starsPosition, setStarsPosition] = useState<{top: number, left: number} | null>(null)
   const [iconSize, setIconSize] = useState(25)
@@ -38,6 +39,7 @@ function Icon({icon, style} : IconProps) {
     <div>
       <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
         style={style}
+        className={className}
         ref={targetRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -50,6 +52,7 @@ function Icon({icon, style} : IconProps) {
     <div>
       <svg width="100" height="102" viewBox="0 0 100 102" fill="none" xmlns="http://www.w3.org/2000/svg"
         style={style}
+        className={className}
         ref={targetRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -61,6 +64,7 @@ function Icon({icon, style} : IconProps) {
     <div>
       <svg width="102" height="100" viewBox="0 0 102 100" fill="none" xmlns="http://www.w3.org/2000/svg"
         style={style}
+        className={className}
         ref={targetRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -72,6 +76,7 @@ function Icon({icon, style} : IconProps) {
     <div>
       <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"
         style={style}
+        className={className}
         ref={targetRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -83,6 +88,7 @@ function Icon({icon, style} : IconProps) {
     <div>
       <svg width="100" height="80" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg"
         style={style}
+        className={className}
         ref={targetRef}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}

@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from 'react';
 
 interface ProjectViewProps {
   project: {
@@ -10,6 +11,7 @@ interface ProjectViewProps {
 }
 
 function ProjectView({ project }: ProjectViewProps) {
+  const [hovered, setHovered] = useState(false);
 
   const getSkillsText = (skills: string[]) => {
     let combined = skills.join("")
@@ -26,15 +28,17 @@ function ProjectView({ project }: ProjectViewProps) {
 
   return (
     <div
-  className="absolute inset-0 m-auto bg-black bg-opacity-30"
+  className="absolute inset-0 m-auto bg-black bg-opacity-30 cursor-pointer"
   style={{
     height: "350px",
     width: "350px",
     border: "3px solid #5A7AFB",
     borderRadius: "100%",
   }}
+  onMouseEnter={() => setHovered(true)}
+  onMouseLeave={() => setHovered(false)}
 >
-  {/* Rotating text around the outside */}
+  {/* Rotating skills around the outside */}
   <div className="absolute w-full h-full animate-spin-slow pointer-events-none">
       {
       Array.from(getSkillsText(project.skills)).map((char, i, arr) => {
@@ -59,13 +63,31 @@ function ProjectView({ project }: ProjectViewProps) {
         );
       })}
     </div>
+    
+    {/* Project name and description */}
+    <div 
+      className="absolute w-full h-full inset-0 flex flex-col justify-center items-center text-center text-white rounded-full z-10"
+      style={{
+        backgroundColor: hovered ? "rgba(0, 0, 0, 0.5)" : "transparent",
+        opacity: hovered ? 1 : 0,
+        transition: "0.3s ease-in-out",
+      }}>
+      <h2 className="text-lg font-bold">{project.name}</h2>
+      <p className="text-sm mt-2">{project.description}</p>
+    </div>
 
     {/* Image in the center */}
-    <img
-      src={project.image}
-      alt={project.name}
-      className="rounded-full w-full h-full object-cover"
-    />
+    <div className="w-full h-full inset-0 flex justify-center items-center overflow-hidden rounded-full">
+      <img
+        src={project.image}
+        alt={project.name}
+        className="rounded-full w-full h-full object-cover"
+        style={{
+          transform: hovered ? "scale(1.05)" : "scale(1)",
+          transition: "transform 0.3s ease-in-out",
+        }}
+      />
+    </div>
   </div>
 
   );
