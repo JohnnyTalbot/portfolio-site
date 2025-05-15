@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Top from '../Top';
 import Icon from './Icon';
 
 interface ContactProps {
@@ -24,8 +26,10 @@ const starMarkers = [
 function Contact({isMobile}: ContactProps) {
   return (
     <div id="contact"
-      className='relative flex justify-center items-center w-screen h-screen'
+      className='w-full h-screen relative flex flex-col'
     >
+      <Top currentView="Contact" />
+
       <div className='absolute'
         style={{
           top: 0,

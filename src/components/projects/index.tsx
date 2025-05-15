@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Top from '../Top';
 import ProjectList from './ProjectList';
 
 const projectsData = [
@@ -11,14 +12,8 @@ const projectsData = [
 
 function Projects() {
   return (
-    <div className='w-full h-screen flex flex-col justify-center items-center'>
-      {/* TOP */}
-      <div className='w-full relative grid grid-cols-3'>
-        <p className='text-5xl'>Projects</p>
-        <div className='flex flex-col justify-center items-center'>
-          <p>up</p>
-        </div>
-      </div>
+    <div id='projects' className='w-full h-screen flex flex-col justify-center items-center'>
+      <Top currentView="Projects" />
 
       {/* MAIN */}
       <div className="w-full h-screen flex justify-center items-center">

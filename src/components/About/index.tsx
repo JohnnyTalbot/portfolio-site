@@ -1,9 +1,11 @@
 import React from 'react'
 
+import Top from '../Top';
+
 function About() {
   return (
     <div id='about'>
-      <p>About</p>
+      <Top currentView="About" />
     </div>
   )
 }
