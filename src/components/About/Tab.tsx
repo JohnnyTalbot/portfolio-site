@@ -3,9 +3,11 @@ import 'react';
 interface TabProps {
   currentTab: string;
   setCurrentTab: Function;
+  changingTab: boolean;
+  setChangingTab: Function;
 }
 
-function Tab({currentTab, setCurrentTab} : TabProps) {
+function Tab({currentTab, setCurrentTab, changingTab, setChangingTab} : TabProps) {
 
   const activeBorder = "solid #5A7AFB 2px";
   const inactiveBorder = "solid rgba(90, 122, 251, 0.5) 2px";
@@ -24,7 +26,12 @@ function Tab({currentTab, setCurrentTab} : TabProps) {
           borderBottom: currentTab == 'profile' ? "none" : activeBorder,
           boxSizing: "border-box",
         }}
-        onClick = {() => {setCurrentTab('profile')}
+        onClick = {() => {
+          if (currentTab !== 'profile' && !changingTab) {
+            setCurrentTab('profile')
+            setChangingTab(true);
+          }
+        }
         }
         >
         <svg width="50%" viewBox="0 0 43 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +52,12 @@ function Tab({currentTab, setCurrentTab} : TabProps) {
           borderBottom: currentTab == 'school' ? "none" : activeBorder,
           boxSizing: "border-box",
         }}
-        onClick = {() => {setCurrentTab('school')}
+        onClick = {() => {
+          if (currentTab !== 'school' && !changingTab) {
+            setCurrentTab('school')
+            setChangingTab(true);
+          }
+        }
         }
         >
         <svg width="50%" viewBox="0 0 54 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +78,12 @@ function Tab({currentTab, setCurrentTab} : TabProps) {
           borderBottom: currentTab == 'hobbies' ? "none" : activeBorder,
           boxSizing: "border-box",
         }}
-        onClick = {() => {setCurrentTab('hobbies')}
+        onClick = {() => {
+          if (currentTab !== 'hobbies' && !changingTab) {
+            setCurrentTab('hobbies')
+            setChangingTab(true);
+          }
+        }
         }
         >
         <svg width="50%" viewBox="0 0 46 50" fill="none" xmlns="http://www.w3.org/2000/svg">

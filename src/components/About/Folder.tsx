@@ -1,17 +1,25 @@
 import React from 'react';
-import { useState } from 'react';
+interface FolderProps {
+  currentTab: string;
+  setCurrentTab: Function;
+  changingTab: boolean;
+  setChangingTab: Function;
+}
 
 import Tab from './Tab';
 
-function Folder(){
-  const [currentTab, setCurrentTab] = useState('profile');
+function Folder({currentTab, setCurrentTab, changingTab, setChangingTab} : FolderProps) {
   return (
-    <div className='w-full h-screen flex flex-col justify-center items-center'>
+    <div className='flex flex-col justify-center items-center'>
       <div style={{
-        height: "500px",
-        width: "400px",
+        width: "500px",
       }}>
-        <Tab currentTab={currentTab} setCurrentTab={setCurrentTab} />
+        <Tab
+          currentTab={currentTab} 
+          setCurrentTab={setCurrentTab} 
+          changingTab={changingTab}
+          setChangingTab={setChangingTab}
+        />
         <div style={{
           height: "350px",
           width: "100%",
@@ -21,6 +29,15 @@ function Folder(){
 
         </div>
       </div>
+      <div
+      style={{
+        marginLeft: "auto",
+        marginTop: "10px",
+        width: "250px",
+        height:"15px",
+        border: "solid #5A7AFB 2px",
+      }}
+      ></div>
     </div>
   );
 };
