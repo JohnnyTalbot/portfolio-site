@@ -4,18 +4,14 @@ import Top from '../Top';
 import TimelineSlider from './TimelineSlider';
 import ExperienceContent from './ExperienceContent';
 
+import experienceData from '../../data/experienceData.json';
+
+const years = experienceData as Record<string, any>;
+
 function Experience() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [containerWidth, setContainerWidth] = useState(0);
-
-  const years = {
-    2021: {}, 
-    2022: {}, 
-    2023: {}, 
-    2024: {}, 
-    2025: {}
-  };
 
   const yearKeys = Object.keys(years);
   const yearCount = yearKeys.length;
