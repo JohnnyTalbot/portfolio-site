@@ -1,13 +1,15 @@
 import 'react';
 
 interface TabProps {
+  aboutData: any;
   currentTab: string;
   setCurrentTab: Function;
-  changingTab: boolean;
-  setChangingTab: Function;
+  changingPicture: boolean;
+  setChangingPicture: Function;
+  setCurrentPicture: Function;
 }
 
-function Tab({currentTab, setCurrentTab, changingTab, setChangingTab} : TabProps) {
+function Tab({aboutData, currentTab, setCurrentTab, changingPicture, setChangingPicture, setCurrentPicture} : TabProps) {
 
   const activeBorder = "solid #5A7AFB 2px";
   const inactiveBorder = "solid rgba(90, 122, 251, 0.5) 2px";
@@ -27,9 +29,10 @@ function Tab({currentTab, setCurrentTab, changingTab, setChangingTab} : TabProps
           boxSizing: "border-box",
         }}
         onClick = {() => {
-          if (currentTab !== 'profile' && !changingTab) {
+          if (currentTab !== 'profile' && !changingPicture) {
             setCurrentTab('profile')
-            setChangingTab(true);
+            setChangingPicture(true);
+            setCurrentPicture(aboutData['profile'][0].image);
           }
         }
         }
@@ -53,9 +56,10 @@ function Tab({currentTab, setCurrentTab, changingTab, setChangingTab} : TabProps
           boxSizing: "border-box",
         }}
         onClick = {() => {
-          if (currentTab !== 'school' && !changingTab) {
+          if (currentTab !== 'school' && !changingPicture) {
             setCurrentTab('school')
-            setChangingTab(true);
+            setChangingPicture(true);
+            setCurrentPicture(aboutData['school'][0].image);
           }
         }
         }
@@ -79,9 +83,10 @@ function Tab({currentTab, setCurrentTab, changingTab, setChangingTab} : TabProps
           boxSizing: "border-box",
         }}
         onClick = {() => {
-          if (currentTab !== 'hobbies' && !changingTab) {
+          if (currentTab !== 'hobbies' && !changingPicture) {
             setCurrentTab('hobbies')
-            setChangingTab(true);
+            setChangingPicture(true);
+            setCurrentPicture(aboutData['hobbies'][0].image);
           }
         }
         }

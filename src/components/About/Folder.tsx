@@ -1,24 +1,30 @@
 import React from 'react';
-interface FolderProps {
-  currentTab: string;
-  setCurrentTab: Function;
-  changingTab: boolean;
-  setChangingTab: Function;
-}
 
 import Tab from './Tab';
+import Content from './Content';
 
-function Folder({currentTab, setCurrentTab, changingTab, setChangingTab} : FolderProps) {
+interface FolderProps {
+  aboutData: any;
+  currentTab: string;
+  setCurrentTab: Function;
+  changingPicture: boolean;
+  setChangingPicture: Function;
+  setCurrentPicture: Function;
+}
+
+function Folder({aboutData, currentTab, setCurrentTab, changingPicture, setChangingPicture, setCurrentPicture} : FolderProps) {
   return (
     <div className='flex flex-col justify-center items-center'>
       <div style={{
         width: "500px",
       }}>
         <Tab
+          aboutData={aboutData}
           currentTab={currentTab} 
           setCurrentTab={setCurrentTab} 
-          changingTab={changingTab}
-          setChangingTab={setChangingTab}
+          changingPicture={changingPicture}
+          setChangingPicture={setChangingPicture}
+          setCurrentPicture={setCurrentPicture}
         />
         <div style={{
           height: "350px",
@@ -26,7 +32,13 @@ function Folder({currentTab, setCurrentTab, changingTab, setChangingTab} : Folde
           border: "solid #5A7AFB 2px",
           borderTop: "none",
           }}>
-
+            <Content
+            aboutData={aboutData}
+            currentTab={currentTab}
+            setCurrentPicture={setCurrentPicture}
+            changingPicture={changingPicture}
+            setChangingPicture={setChangingPicture}
+          />
         </div>
       </div>
       <div
@@ -37,7 +49,8 @@ function Folder({currentTab, setCurrentTab, changingTab, setChangingTab} : Folde
         height:"15px",
         border: "solid #5A7AFB 2px",
       }}
-      ></div>
+      >
+      </div>
     </div>
   );
 };

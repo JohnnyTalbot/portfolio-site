@@ -2,26 +2,26 @@ import React, { useEffect, useState } from 'react';
 
 interface PictureContainerProps {
   currentPicture: string;
-  changingTab: boolean;
-  setChangingTab: (value: boolean) => void;
+  changingPicture: boolean;
+  setChangingPicture: (value: boolean) => void;
 }
 
-function PictureContainer({ currentPicture, changingTab, setChangingTab }: PictureContainerProps) {
+function PictureContainer({ currentPicture, changingPicture, setChangingPicture }: PictureContainerProps) {
   const [visible, setVisible] = useState(true);
   const [localPicture, setLocalPicture] = useState(currentPicture);
 
   useEffect(() => {
-    if (changingTab) {
+    if (changingPicture) {
       setVisible(false);
     }
-  }, [changingTab]);
+  }, [changingPicture]);
 
   const handleTransitionEnd = () => {
     if (!visible) {
       setLocalPicture(currentPicture);
       setVisible(true);
     } else {
-      setChangingTab(false);
+      setChangingPicture(false);
     }
   };
 
