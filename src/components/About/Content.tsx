@@ -16,10 +16,10 @@ function Content({aboutData, currentTab, setCurrentPicture, changingPicture, set
   if (currentTab === 'profile') {
     return (
       <div className='flex flex-col p-5'>
-        <h1 className='mb-3 text-2xl font-bold'>Profile</h1>
-        <p className='text-3xl'>{aboutData['profile'][0].name}</p>
-        <p className='mb-3 text-sm text-gray-500'>Born: {aboutData['profile'][0].birthday}</p>
-        <p>{aboutData['profile'][0].content}</p>
+        <h1 className='mb-1 md:mb-3 text-lg md:text-2xl font-bold'>Profile</h1>
+        <p className='text-xl md:text-3xl'>{aboutData['profile'][0].name}</p>
+        <p className='mb-1 md:mb-3 text-xs md:text-sm text-gray-500'>Born: {aboutData['profile'][0].birthday}</p>
+        <p className='text-sm md:text-md'>{aboutData['profile'][0].content}</p>
       </div>
     );
   }
@@ -29,15 +29,15 @@ function Content({aboutData, currentTab, setCurrentPicture, changingPicture, set
         {aboutData['school'].map((school: any, index: number) => (
           <div
             key={index}
-            className='relative h-full flex flex-col p-5'
+            className='relative h-full min-h-[250px] flex flex-col p-5'
             style={{
               display: currentLevel === index ? 'flex' : 'none',
               transition: 'display 0.3s ease-in-out',
             }}
           >
-            <h1 className='mb-3 text-2xl font-bold'>Education</h1>
-            <p>{school.level}</p>
-            <p>{school.school}</p>
+            <h1 className='mb-1 md:mb-3 text-lg md:text-2xl font-bold'>Education</h1>
+            <p className='mb-1 md:mb-3 text-xs md:text-sm text-gray-500'>{school.level}</p>
+            <p className='text-lg md:text-2xl'>{school.school}</p>
 
             <div className='absolute bottom-0 right-0 flex justify-end items-center gap-5 p-2'>
               <Arrow 
@@ -74,15 +74,15 @@ function Content({aboutData, currentTab, setCurrentPicture, changingPicture, set
         {aboutData['hobbies'].map((hobby: any, index: number) => (
           <div
             key={index}
-            className='relative h-full flex flex-col p-5'
+            className='relative h-full min-h-[250px] flex flex-col p-5'
             style={{
               display: currentLevel === index ? 'flex' : 'none',
               transition: 'display 0.3s ease-in-out',
             }}
           >
-            <h1 className='mb-3 text-2xl font-bold'>Hobbies</h1>
-            <p>{hobby.hobby}</p>
-            <p>{hobby.content}</p>
+            <h1 className='mb-1 md:mb-3 text-lg md:text-2xl font-bold'>Hobbies</h1>
+            <p className='text-lg md:text-2xl'>{hobby.hobby}</p>
+            <p className='text-sm md:text-md'>{hobby.content}</p>
 
             <div className='absolute bottom-0 right-0 flex justify-end items-center gap-5 p-2'>
               <Arrow 

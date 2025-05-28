@@ -14,10 +14,8 @@ interface FolderProps {
 
 function Folder({aboutData, currentTab, setCurrentTab, changingPicture, setChangingPicture, setCurrentPicture} : FolderProps) {
   return (
-    <div className='flex flex-col justify-center items-center'>
-      <div style={{
-        width: "500px",
-      }}>
+    <div className='w-11/12 md:w-[500px] h-auto md:h-auto flex flex-col justify-center items-center'>
+      <div className='w-full md:w-[500px]'>
         <Tab
           aboutData={aboutData}
           currentTab={currentTab} 
@@ -26,11 +24,11 @@ function Folder({aboutData, currentTab, setCurrentTab, changingPicture, setChang
           setChangingPicture={setChangingPicture}
           setCurrentPicture={setCurrentPicture}
         />
-        <div style={{
-          height: "350px",
-          width: "100%",
-          border: "solid #5A7AFB 2px",
-          borderTop: "none",
+        <div 
+          className='w-full h-auto md:h-[350px]'
+          style={{
+            border: "solid #5A7AFB 2px",
+            borderTop: "none",
           }}>
             <Content
             aboutData={aboutData}

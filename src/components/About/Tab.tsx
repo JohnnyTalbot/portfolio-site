@@ -18,10 +18,8 @@ function Tab({aboutData, currentTab, setCurrentTab, changingPicture, setChanging
     <div className='flex flex-row'>
       {/* Profile */}
       <div 
-        className='flex flex-col justify-center items-center cursor-pointer'
+        className='flex flex-col justify-center items-center cursor-pointer w-[50px] h-[40px] md:w-[70px] md:h-[60px]'
         style={{
-          height: "60px",
-          width: "70px",
           borderTop: currentTab == 'profile' ? activeBorder : inactiveBorder,
           borderLeft: currentTab == 'profile' ? activeBorder : inactiveBorder,
           borderRight: currentTab == 'profile' ? activeBorder : "none",
@@ -45,10 +43,8 @@ function Tab({aboutData, currentTab, setCurrentTab, changingPicture, setChanging
 
       {/* School */}
       <div 
-        className='flex flex-col justify-center items-center cursor-pointer'
+        className='flex flex-col justify-center items-center cursor-pointer w-[50px] h-[40px] md:w-[70px] md:h-[60px]'
         style={{
-          height: "60px",
-          width: "70px",
           borderTop: currentTab == 'school' ? activeBorder : inactiveBorder,
           borderLeft: currentTab == 'school' ? activeBorder : "none",
           borderRight: currentTab == 'school' ? activeBorder : "none",
@@ -72,10 +68,8 @@ function Tab({aboutData, currentTab, setCurrentTab, changingPicture, setChanging
 
       {/* Hobbies */}
       <div 
-        className='flex flex-col justify-center items-center cursor-pointer'
+        className='flex flex-col justify-center items-center cursor-pointer w-[50px] h-[40px] md:w-[70px] md:h-[60px]'
         style={{
-          height: "60px",
-          width: "70px",
           borderTop: currentTab == 'hobbies' ? activeBorder : inactiveBorder,
           borderLeft: currentTab == 'hobbies' ? activeBorder : "none",
           borderRight: currentTab == 'hobbies' ? activeBorder : inactiveBorder,

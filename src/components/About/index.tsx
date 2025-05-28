@@ -20,7 +20,7 @@ function About() {
       <Top currentView="About" />
 
       {/* Folder Information */}
-      <div className='w-full h-screen flex flex-row justify-center items-center gap-10'>
+      <div className='w-full h-screen flex flex-col md:flex-row justify-evenly justify-center items-center gap-2 s:gap-5 md:gap-10'>
         <PictureContainer
           currentPicture={currentPicture}
           changingPicture={changingPicture}
