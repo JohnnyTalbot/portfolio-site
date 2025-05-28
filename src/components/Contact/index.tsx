@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import Top from '../Top';
 import Icon from './Icon';
@@ -24,11 +24,23 @@ const starMarkers = [
 ]
 
 function Contact({isMobile}: ContactProps) {
+  const [copied, setCopied] = useState(false);
+
   return (
     <div id="contact"
       className='w-full h-screen relative flex flex-col'
     >
       <Top currentView="Contact" />
+
+      <div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none"
+        style={{
+          opacity: copied ? 1 : 0,
+          transition: 'opacity 0.5s ease-in-out'
+        }}
+      >
+        <p className="text-2xl">Copied!</p>
+      </div>
 
       <div className='absolute'
         style={{
@@ -42,16 +54,20 @@ function Contact({isMobile}: ContactProps) {
           <Icon 
             key={index}
             icon={marker.icon}
-            className="translate-x-[-50%] translate-y-[-50%] hover:scale-125 transition-transform duration-500"
+            className="flex flex-col justify-center items-center translate-x-[-50%] translate-y-[-50%]"
+            setCopied={setCopied}
+            copied={copied}
             style={{
               position: "absolute",
               zIndex: 20,
               filter: 'drop-shadow(0px 0px 3px #FFFFFF)',
               left: isMobile ? marker.y : marker.x,
               top: isMobile ? marker.x : marker.y,
+            }}
+            iconStyle={{
               width: "60px",
               height: "auto",
-              cursor: "pointer",
+              cursor: "pointer"
             }}
             />
         ))}
