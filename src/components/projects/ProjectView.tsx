@@ -70,7 +70,7 @@ function ProjectView({ isMobile, project, setCanScroll, setShowProject, radius }
       })}
     </div>
     
-    {/* Project name and description */}
+    {/* Project name */}
     <div 
       className="absolute w-full h-full inset-0 flex flex-col justify-center items-center text-center text-white rounded-full z-10"
       style={{
@@ -79,7 +79,6 @@ function ProjectView({ isMobile, project, setCanScroll, setShowProject, radius }
         transition: "0.3s ease-in-out",
       }}>
       <h2 className="text-lg font-bold">{project.name}</h2>
-      <p className="text-sm mt-2">{project.description}</p>
     </div>
 
     {/* Image in the center */}
