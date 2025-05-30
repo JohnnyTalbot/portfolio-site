@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 import Navigation from "@/components/Navigation";
 import Background from "@/components/Background";
@@ -12,22 +12,27 @@ import Contact from '@/components/Contact';
 export default function Home() {
   const [showNav, setShowNav] = useState(true)
   const [currentView, setCurrentView] = useState('about')
-  const [isMoblile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
+  const [canScroll, setCanScroll] = useState(true)
+  const canScrollRef = useRef(true);
+
+  useEffect(() => {
+    canScrollRef.current = canScroll;
+  }, [canScroll]);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
 
   useEffect(() => {
     let lastScrollY = 0;
 
-    const handleResize = () => {
-      if (window.innerWidth <= 768) {
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    };
     handleResize();
     window.addEventListener('resize', handleResize);
 
     const handleWheel = (event: any) => {
+      if (!canScrollRef.current) return;
+
       const deltaY = event.deltaY;
       if (deltaY > 0) {
         setShowNav(false);
@@ -36,6 +41,7 @@ export default function Home() {
       }
       lastScrollY += deltaY;
     };
+
     window.addEventListener("wheel", handleWheel);
 
     return () => {
@@ -57,8 +63,8 @@ export default function Home() {
         />}
         {(!showNav && currentView == 'about') && <About />}
         {(!showNav && currentView == 'experience') && <Experience />}
-        {(!showNav && currentView == 'projects') && <Projects />}
-        {(!showNav && currentView == 'contact') && <Contact isMobile={isMoblile} />}
+        {(!showNav && currentView == 'projects') && <Projects isMobile={isMobile} setCanScroll={setCanScroll} />}
+        {(!showNav && currentView == 'contact') && <Contact isMobile={isMobile} />}
         <div>
         </div>
       </main>

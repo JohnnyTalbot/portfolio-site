@@ -1,49 +1,72 @@
-import React from 'react';
-import { useState } from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 
 import ProjectView from './ProjectView';
 
 interface ProjectProps {
- projectsData: Array<{
-   name: string;
-   description: string;
-   skills: string[];
-   image: string;
- }>;
+  isMobile: boolean;
+  projectsData: Record<string, any>;
+  setCanScroll: Function;
+  setShowProject: Function;
+  setCurrentProject: Function;
+  currentProject: {
+      name: string;
+      description: string;
+      skills: string[];
+      image: string;
+    };
 }
 
-function ProjectList({ projectsData }: ProjectProps) {
-  const [currentProject, setCurrentProject] = useState(projectsData[0]);
+function ProjectList({ isMobile, projectsData, setCanScroll, setShowProject, setCurrentProject, currentProject }: ProjectProps) {
+  const [radius, setRadius] = useState(185);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+useEffect(() => {
+  const observer = new ResizeObserver((entries) => {
+    for (let entry of entries) {
+      const width = entry.contentRect.width;
+      setRadius(width / 2);
+    }
+  });
+
+  if (containerRef.current) {
+    observer.observe(containerRef.current);
+  }
+
+  return () => {
+    if (containerRef.current) {
+      observer.unobserve(containerRef.current);
+    }
+  };
+}, []);
+
 
   return (
-    <div className="relative" style={{ width: "350px", height: "350px" }}>
+    <div ref={containerRef} className="relative w-[55vw] h-[55vw] sm:w-[350px] sm:h-[350px]">
       {/* Central Circle */}
-      <ProjectView project={currentProject} />
+      <ProjectView isMobile={isMobile} project={currentProject} setCanScroll={setCanScroll} setShowProject={setShowProject} radius={radius} />
 
       {/* Surrounding Circles */}
-      {projectsData.map((project, i) => {
-        const angle = (i * 360) / projectsData.length - 90;
-        const radius = 175; // same as half of 350px
-        const rSmall = 30; // radius of small circle
-        const x = radius + (radius+(rSmall*2)) * Math.cos((angle * Math.PI) / 180) - rSmall;
-        const y = radius + (radius+(rSmall*2)) * Math.sin((angle * Math.PI) / 180) - rSmall;
+      {Object.entries(projectsData).map(([key, project], index) => {
+        const angle = (index * 360) / Object.entries(projectsData).length - 90;
+        const rSmall = isMobile ? 22 : 30;
+        const x = radius + (radius + rSmall * 2) * Math.cos((angle * Math.PI) / 180) - rSmall;
+        const y = radius + (radius + rSmall * 2) * Math.sin((angle * Math.PI) / 180) - rSmall;
 
         return (
           <div
-            key={i}
+            key={key}
             className="absolute p-[3px] rounded-full bg-gradient-to-r from-blue-500 to-black-400 cursor-pointer"
             style={{
               height: `${rSmall * 2}px`,
               width: `${rSmall * 2}px`,
               top: `${y}px`,
               left: `${x}px`,
-              boxShadow: currentProject.name == project.name ? "0 0 10px rgba(236, 252, 94, 0.87)" : "none",
+              boxShadow: currentProject?.name === project.name ? "0 0 10px rgba(236, 252, 94, 0.87)" : "none",
               transition: "0.2s ease-in-out",
             }}
             onMouseEnter={() => setCurrentProject(project)}
           >
-            <div className='w-full h-full rounded-full flex justify-center items-center'
-            >
+            <div className="w-full h-full rounded-full flex justify-center items-center">
               <img
                 src={project.image}
                 alt={project.name}
@@ -53,6 +76,7 @@ function ProjectList({ projectsData }: ProjectProps) {
           </div>
         );
       })}
+
     </div>
   )
 }

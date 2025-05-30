@@ -2,15 +2,19 @@ import React from "react";
 import { useState } from 'react';
 
 interface ProjectViewProps {
+  isMobile: boolean;
   project: {
     name: string;
     description: string;
     skills: string[];
     image: string;
   };
+  radius: number;
+  setCanScroll: Function;
+  setShowProject: Function;
 }
 
-function ProjectView({ project }: ProjectViewProps) {
+function ProjectView({ isMobile, project, setCanScroll, setShowProject, radius }: ProjectViewProps) {
   const [hovered, setHovered] = useState(false);
 
   const getSkillsText = (skills: string[]) => {
@@ -28,29 +32,31 @@ function ProjectView({ project }: ProjectViewProps) {
 
   return (
     <div
-  className="absolute inset-0 m-auto bg-black bg-opacity-30 cursor-pointer"
+  className="absolute inset-0 m-auto bg-black bg-opacity-30 cursor-pointer w-full h-full"
   style={{
-    height: "350px",
-    width: "350px",
     border: "3px solid #5A7AFB",
     borderRadius: "100%",
   }}
   onMouseEnter={() => setHovered(true)}
   onMouseLeave={() => setHovered(false)}
+  onClick={() => {
+    setCanScroll(false);
+    setShowProject(true);
+    }}
 >
   {/* Rotating skills around the outside */}
   <div className="absolute w-full h-full animate-spin-slow pointer-events-none">
       {
       Array.from(getSkillsText(project.skills)).map((char, i, arr) => {
-        const radius = 185; // Slightly more than 175 (outer of 350px)
         const angle = (360 / arr.length) * i - 90;
-        const x = radius * Math.cos((angle * Math.PI) / 180);
-        const y = radius * Math.sin((angle * Math.PI) / 180);
+        const offset = isMobile ? 7 : 10;
+        const x = (radius + offset) * Math.cos((angle * Math.PI) / 180);
+        const y = (radius + offset) * Math.sin((angle * Math.PI) / 180);
 
         return (
           <span
             key={i}
-            className="absolute text-white text-s"
+            className="absolute text-white text-xs md:text-sm"
             style={{
               left: `calc(50% + ${x}px)`,
               top: `calc(50% + ${y}px)`,
