@@ -5,41 +5,51 @@
       "title": "Web Developer",
       "birthday": "January 24, 2000",
       "content": "A passionate developer with a love for creating innovative solutions. Skilled in various programming languages and frameworks, he thrives on challenges and enjoys learning new technologies. He has a strong interest in UI/UX development and is always looking for ways to improve user experiences. He is continuously expanding his skill set and is eager to contribute to exciting projects.",
-      "image": "https://fastly.picsum.photos/id/724/200/200.jpg?hmac=sUKRpiwXopeRQ36cEVnZgrG3Wd73G8iet9dfVSvmi8k"
+      "image": "/about/profile.jpg"
     }
   ],
   "school": [
     {
       "level": "Elementary",
       "school": "St. John's Institute",
-      "image": "https://fastly.picsum.photos/id/965/200/200.jpg?hmac=OalaXaaPbpRZbMwF3uJMUdZIpUmyqse0anUnQcbStrM"
+      "date": "2008-2013",
+      "image": "/about/elementary.jpg"
     },
     {
       "level": "High School",
       "school": "Ateneo de Manila High School",
-      "image": "https://fastly.picsum.photos/id/965/200/200.jpg?hmac=OalaXaaPbpRZbMwF3uJMUdZIpUmyqse0anUnQcbStrM"
+      "date": "2013-2017",
+      "image": "/about/highschool.jpg"
     },
     {
       "level": "University",
       "school": "Ateneo de Manila University",
-      "image": "https://fastly.picsum.photos/id/965/200/200.jpg?hmac=OalaXaaPbpRZbMwF3uJMUdZIpUmyqse0anUnQcbStrM"
+      "date": "2017-2022",
+      "course": "BS Computer Science",
+      "specialization": "Data Science and Analytics",
+      "image": "/about/university.jpg"
     }
   ],
   "hobbies": [
     {
       "hobby": "Football",
-      "content": "This is the hobbies tab content.",
-      "image": "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U"
+      "content": "My first love was football. I've played the sport ever since I was a little kid because my dad was also a professional football player back in his day. He was the one who introduced me to the sport and became my first coach and inspiration for playing the game. Football has given me so many opportunities in my life including a scholarship in high school which I will be forever grateful for.",
+      "image": "/about/football.jpg"
     },
     {
       "hobby": "Track & Field",
-      "content": "This is the hobbies tab content.",
-      "image": "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U"
+      "content": "I later delved into Track & Field in my final year in high school where I won 5 medals in my rookie year. This also was a huge boost for my career as it landed me a scholarship in the Ateneo de Manila University where I also competed in Track & Field UAAP until the pandemic happened. Although I didn't enjoy it as much as football, it was a new discipline that I learned to love and appreciate. ",
+      "image": "/about/track.jpg"
     },
     {
-      "hobby": "Gym",
-      "content": "This is the hobbies tab content.",
-      "image": "https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U"
+      "hobby": "Gym/Fitness",
+      "content": "Due to my athletic background, I found that even after graduating from university and varsity life, I still keep up with the same disciplines that I gained from my sports. The main thing is that sports are incredibly helpful for maintaining a healthy body and mind. I regularly go to the gym and involve myself in various sports in order to stay in shape and keep my body active.",
+      "image": "/about/gym.jpg"
+    },
+    {
+      "hobby": "Chess",
+      "content" : "A recent hobby of mine is chess which started during the pandemic. When looking for new ways to entertain myself in lockdown, I discovered chess. I quickly grew to enjoy the game as I watched youtubers and streamers play the game. I loved it even more as I played it myself and got better at the game. As I achieved a personal online rating of 1600+, it almost felt as if I learned a new skill. ",
+      "image": "/about/chess.png"
     }
   ]
 }

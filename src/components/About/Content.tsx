@@ -36,8 +36,11 @@ function Content({aboutData, currentTab, setCurrentPicture, changingPicture, set
             }}
           >
             <h1 className='mb-1 md:mb-3 text-lg md:text-2xl font-bold'>Education</h1>
-            <p className='mb-1 md:mb-3 text-xs md:text-sm text-gray-500'>{school.level}</p>
+            <p className='mb-2 text-xs md:text-sm text-gray-500'>{school.level}</p>
             <p className='text-lg md:text-2xl'>{school.school}</p>
+            <p className='mb-1 md:mb-3 text-xs md:text-sm text-gray-500'>{school.date}</p>
+            <p className='text-sm md:text-md'>{school.course ? school.course : "" }</p>
+            <p className='text-sm md:text-md'>{school.specialization ? `Specialization: ${school.specialization}` : "" }</p>
 
             <div className='absolute bottom-0 right-0 flex justify-end items-center gap-5 p-2'>
               <Arrow 

@@ -10,25 +10,32 @@ import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
 
 export default function Home() {
-  const [showNav, setShowNav] = useState(true)
-  const [currentView, setCurrentView] = useState('about')
-  const [isMobile, setIsMobile] = useState(false)
-  const [canScroll, setCanScroll] = useState(true)
+  const [showNav, setShowNav] = useState(true);
+  const [currentView, setCurrentView] = useState('about');
+  const [isMobile, setIsMobile] = useState(false);
+  const [canScroll, setCanScroll] = useState(true);
+  const [hasMounted, setHasMounted] = useState(false);
   const canScrollRef = useRef(true);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   useEffect(() => {
     canScrollRef.current = canScroll;
   }, [canScroll]);
 
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 768);
-  };
-
   useEffect(() => {
-    let lastScrollY = 0;
+    if (!hasMounted) return;
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
 
     handleResize();
     window.addEventListener('resize', handleResize);
+
+    let lastScrollY = 0;
 
     const handleWheel = (event: any) => {
       if (!canScrollRef.current) return;
@@ -48,8 +55,9 @@ export default function Home() {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener("wheel", handleWheel);
     };
-  }, []);
-  
+  }, [hasMounted]);
+
+  if (!hasMounted) return null;
 
   return (
     <div>
@@ -61,15 +69,14 @@ export default function Home() {
           setCurrentView={setCurrentView} 
           setShowNav={setShowNav}
         />}
-        {(!showNav && currentView == 'about') && <About />}
-        {(!showNav && currentView == 'experience') && <Experience />}
-        {(!showNav && currentView == 'projects') && <Projects isMobile={isMobile} setCanScroll={setCanScroll} />}
-        {(!showNav && currentView == 'contact') && <Contact isMobile={isMobile} />}
-        <div>
-        </div>
+        {(!showNav && currentView === 'about') && <About />}
+        {(!showNav && currentView === 'experience') && <Experience />}
+        {(!showNav && currentView === 'projects') && (
+          <Projects isMobile={isMobile} setCanScroll={setCanScroll} />
+        )}
+        {(!showNav && currentView === 'contact') && <Contact isMobile={isMobile} />}
       </main>
-      <footer>
-      </footer>
+      <footer></footer>
     </div>
   );
 }
