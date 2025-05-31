@@ -58,7 +58,6 @@ function Experience({showNav, currentView}: ExperienceProps) {
       <ExperienceContent
         scrollRef={scrollRef}
         years={years}
-        activeIndex={activeIndex}
       />
     </div>
   );

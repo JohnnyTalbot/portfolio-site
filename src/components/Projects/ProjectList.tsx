@@ -27,7 +27,7 @@ function ProjectList({ isMobile, projectsData, setCanScroll, setShowProject, set
 
 useEffect(() => {
   const observer = new ResizeObserver((entries) => {
-    for (let entry of entries) {
+    for (const entry of entries) {
       const width = entry.contentRect.width;
       setRadius(width / 2);
     }

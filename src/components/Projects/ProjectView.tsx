@@ -10,15 +10,15 @@ interface ProjectViewProps {
     image: string;
   };
   radius: number;
-  setCanScroll: Function;
-  setShowProject: Function;
+  setCanScroll: (canScroll: boolean) => void;
+  setShowProject: (show: boolean) => void;
 }
 
 function ProjectView({ isMobile, project, setCanScroll, setShowProject, radius }: ProjectViewProps) {
   const [hovered, setHovered] = useState(false);
 
   const getSkillsText = (skills: string[]) => {
-    let combined = skills.join("")
+    const combined = skills.join("")
     if (skills.length <= 1) {
       return skills.join("");
     }

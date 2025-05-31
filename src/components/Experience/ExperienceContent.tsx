@@ -3,10 +3,9 @@ import React from 'react';
 type Props = {
   scrollRef: React.RefObject<HTMLDivElement | null>;
   years: Record<string, any>;
-  activeIndex: number;
 };
 
-function ExperienceContent({ scrollRef, years, activeIndex } : Props) {
+function ExperienceContent({ scrollRef, years } : Props) {
   const yearKeys = Object.keys(years);
   const yearCount = yearKeys.length;
 
@@ -20,7 +19,7 @@ function ExperienceContent({ scrollRef, years, activeIndex } : Props) {
         className="h-full flex transition-transform duration-300"
         style={{ width: `${yearCount * 100}%` }}
       >
-        {Object.entries(years).map(([year, content], index) => (
+        {Object.entries(years).map(([year, content], _index) => (
           <div
             key={year}
             className="h-full flex flex-col md:flex-row justify-center items-center mt-auto mb-auto"

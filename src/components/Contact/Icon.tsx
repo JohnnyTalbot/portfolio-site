@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
 
-import Star from './Star';
 import StarExplosion from './StarExplosion';
 
 interface IconProps {
@@ -45,15 +44,6 @@ function Icon({icon, style, iconStyle, className, setCopied, copied} : IconProps
       setStarsShow(false);
     }, 500);
   };
-
-  const handleClick = () => {
-    if (!copied) {
-      setCopied(true);
-      setTimeout(() => {
-        setCopied(false);
-      }, 1000);
-    }
-  }
 
   const copyToClipboard = async (text: string) => {
     if (!copied) {
