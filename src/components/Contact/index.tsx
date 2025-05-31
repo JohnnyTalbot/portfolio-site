@@ -67,7 +67,7 @@ function Contact({showNav, currentView, isMobile}: ContactProps) {
               zIndex: 20,
               filter: 'drop-shadow(0px 0px 3px #FFFFFF)',
               left: isMobile ? marker.y : marker.x,
-              top: isMobile ? marker.x : marker.y,
+              top: isMobile ? `calc(${marker.x} + 50px)` : marker.y,
             }}
             iconStyle={{
               width: "60px",
@@ -76,22 +76,6 @@ function Contact({showNav, currentView, isMobile}: ContactProps) {
             }}
             />
         ))}
-
-        {/* {starMarkers.map((marker, index) => (
-          <div 
-          key={index}
-          style={{
-            position: "absolute",
-            left: marker.x,
-            top: marker.y,
-            transform: 'translate(-50%, -50%)',
-            borderRadius: "100%",
-            backgroundColor: "#FAF570",
-            filter: 'drop-shadow(0px 0px 3px #FFFFFF)',
-            width: "5px",
-            height: "5px",
-          }}></div>
-        ))} */}
       </div>
     </div>
   )

@@ -70,7 +70,7 @@ function Icon({icon, style, iconStyle, className, setCopied, copied} : IconProps
 
 
   return (
-    <div>
+    <div className='text-sm md:text-md'>
     {icon == 'instagram' ?
     <div 
       style={style}
@@ -91,7 +91,8 @@ function Icon({icon, style, iconStyle, className, setCopied, copied} : IconProps
         marginTop: '10px',
         pointerEvents: 'none',
         transition: 'opacity 0.3s ease-in-out',
-        opacity: currentIcon === 'instagram' ? 1 : 0
+        opacity: currentIcon === 'instagram' ? 1 : 0,
+        textAlign: 'center'
       }}>@johnnytalbot_</p>
     </div>
     : icon == 'linkedin' ?
@@ -113,7 +114,8 @@ function Icon({icon, style, iconStyle, className, setCopied, copied} : IconProps
         marginTop: '10px',
         pointerEvents: 'none',
         transition: 'opacity 0.3s ease-in-out',
-        opacity: currentIcon === 'linkedin' ? 1 : 0
+        opacity: currentIcon === 'linkedin' ? 1 : 0,
+        textAlign: 'center'
       }}>https://www.linkedin.com/in/jonathan-talbot8/</p>
     </div>
     : icon == 'github' ?
@@ -135,7 +137,8 @@ function Icon({icon, style, iconStyle, className, setCopied, copied} : IconProps
         marginTop: '10px',
         pointerEvents: 'none',
         transition: 'opacity 0.3s ease-in-out',
-        opacity: currentIcon === 'github' ? 1 : 0
+        opacity: currentIcon === 'github' ? 1 : 0,
+        textAlign: 'center'
       }}>https://github.com/JohnnyTalbot</p>
     </div>
     : icon == 'phone' ?
@@ -157,7 +160,8 @@ function Icon({icon, style, iconStyle, className, setCopied, copied} : IconProps
         marginTop: '10px',
         pointerEvents: 'none',
         transition: 'opacity 0.3s ease-in-out',
-        opacity: currentIcon === 'phone' ? 1 : 0
+        opacity: currentIcon === 'phone' ? 1 : 0,
+        textAlign: 'center'
       }}>+63 917 547 8749</p>
     </div>
     : icon == 'email' ?
@@ -180,7 +184,8 @@ function Icon({icon, style, iconStyle, className, setCopied, copied} : IconProps
         marginTop: '10px',
         pointerEvents: 'none',
         transition: 'opacity 0.3s ease-in-out',
-        opacity: currentIcon === 'email' ? 1 : 0
+        opacity: currentIcon === 'email' ? 1 : 0,
+        textAlign: 'center'
       }}>johnnywtalbot@gmail.com</p>
     </div>
     :

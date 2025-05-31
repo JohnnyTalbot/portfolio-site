@@ -48,6 +48,9 @@ body {
   color: #5A7AFB;
 }
 
+.h-fullscreen {
+  height: calc(var(--vh, 1vh) * 100);
+}
 
 @keyframes spin-slow {
   from { transform: rotate(0deg); }
@@ -86,8 +89,15 @@ body {
   }
 }
 
-.h-fullscreen {
-  height: calc(var(--vh, 1vh) * 100);
+@keyframes fly-away {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) scale(0.5);
+  }
 }
 
 

@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import Star from "./Star";
+import React, { useEffect, useRef, useState } from "react";
 
 interface StarExplosionProps {
   position: { top: number; left: number };
@@ -7,57 +6,55 @@ interface StarExplosionProps {
   starsShow: boolean;
 }
 
+interface StarData {
+  x: number;
+  y: number;
+  id: number;
+}
+
 const NUM_STARS = 50;
 
-function StarExplosion({ position, iconSize, starsShow }: StarExplosionProps) {
-  const [stars, setStars] = useState<{ direction: { x: number; y: number }; distance: number }[]>([]);
-  const [visible, setVisible] = useState(false);
+function StarExplosion ({ position, iconSize, starsShow }: StarExplosionProps) {
+  const [stars, setStars] = useState<StarData[]>([]);
+  const globalIdRef = useRef(0);
 
   useEffect(() => {
     if (starsShow) {
-      setStars([
-        ...Array.from({ length: Math.round(NUM_STARS * 7/10) }, () => ({
-          direction: {
-            x: (Math.random() - 0.5) * 4,
-            y: (Math.random() - 0.5) * 4,
-          },
-          distance: (Math.random() * iconSize) * 0.5 + iconSize, // Closer group
-        })),
-        ...Array.from({ length: Math.round(NUM_STARS * 3/10) }, () => ({
-          direction: {
-            x: (Math.random() - 0.5) * 4,
-            y: (Math.random() - 0.5) * 4,
-          },
-          distance: (Math.random() * iconSize) + iconSize * 1.5, // Farther group
-        })),
-      ]);
+      const newStars: StarData[] = Array.from({ length: NUM_STARS }, () => ({
+        x: (Math.random() - 0.5) * iconSize * 2.5,
+        y: (Math.random() - 0.5) * iconSize * 2.5,
+        id: globalIdRef.current++,
+      }));
+      setStars(newStars);
 
-      setTimeout(() => setVisible(true), 50);
-    } else {
-      setVisible(false);
-      setTimeout(() => setStars([]), 300);
+      const timer = setTimeout(() => setStars([]), 800);
+      return () => clearTimeout(timer);
     }
   }, [starsShow, iconSize]);
 
   return (
-    <div
-      style={{
-        opacity: visible ? 1 : 0,
-        transition: "opacity 0.3s ease-in-out",
-        pointerEvents: "none",
-      }}
-    >
-      {stars.map((star, index) => (
-        <Star
-          key={index}
-          position={position}
-          direction={star.direction}
-          offset={{ x: 0, y: 0 }}
-          distance={star.distance}
+    <div style={{ position: "absolute", top: 0, left: 0, pointerEvents: "none", zIndex: 10 }}>
+      {stars.map((star) => (
+        <div
+          key={star.id}
+          className="exploding-star"
+          style={{
+            position: "absolute",
+            top: `${position.top}px`,
+            left: `${position.left}px`,
+            width: "5px",
+            height: "5px",
+            borderRadius: "50%",
+            backgroundColor: "#FAF570",
+            filter: "drop-shadow(0 0 3px white)",
+            animation: `fly-away 0.6s ease-out forwards`,
+            ["--x" as any]: `${star.x}px`,
+            ["--y" as any]: `${star.y}px`,
+          }}
         />
       ))}
     </div>
   );
-}
+};
 
 export default StarExplosion;
