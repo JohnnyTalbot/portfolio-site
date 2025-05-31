@@ -19,7 +19,7 @@ function ExperienceContent({ scrollRef, years } : Props) {
         className="h-full flex transition-transform duration-300"
         style={{ width: `${yearCount * 100}%` }}
       >
-        {Object.entries(years).map(([year, content], _index) => (
+        {Object.entries(years).map(([year, content]) => (
           <div
             key={year}
             className="h-full flex flex-col md:flex-row justify-center items-center mt-auto mb-auto"
