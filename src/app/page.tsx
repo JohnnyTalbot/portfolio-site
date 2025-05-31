@@ -57,7 +57,7 @@ export default function Home() {
   if (!hasMounted) return null;
 
   return (
-    <div>
+    <div className="fixed inset-0 w-full min-h-screen overflow-hidden">
       <Background />
       <main className="z-10 relative overflow-hidden w-full h-screen">
         <Navigation 
