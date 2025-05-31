@@ -8,7 +8,7 @@ interface IconProps {
   style: React.CSSProperties;
   iconStyle: React.CSSProperties;
   className?: string;
-  setCopied: Function;
+  setCopied: (value: boolean) => void;
   copied: boolean;
 }
 

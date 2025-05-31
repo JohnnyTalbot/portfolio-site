@@ -29,7 +29,7 @@ function ExperienceContent({ scrollRef, years, activeIndex } : Props) {
               height: '150px',
             }}
           >
-            {content.map((item: any, itemIndex: number) => (
+            {content.map((item: Record<string, any>, itemIndex: number) => (
               <div key={itemIndex} className="py-2 px-5 xl:p-20 md:p-4 mb-2">
                 <h2 className="text-md md:text-2xl font-bold">{item.title}</h2>
                 <h3 className="text-sm md:text-xl">{item.position}</h3>

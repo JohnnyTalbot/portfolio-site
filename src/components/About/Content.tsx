@@ -3,11 +3,11 @@ import React, {useState} from 'react';
 import Arrow from './Arrow';
 
 interface ContentProps {
-  aboutData: any;
+  aboutData: Record<string, any>;
   currentTab: string;
-  setCurrentPicture: Function;
+  setCurrentPicture: (image: string) => void;
   changingPicture: boolean;
-  setChangingPicture: Function;
+  setChangingPicture: (value: boolean) => void;
 }
 
 function Content({aboutData, currentTab, setCurrentPicture, changingPicture, setChangingPicture }: ContentProps) {
@@ -26,7 +26,7 @@ function Content({aboutData, currentTab, setCurrentPicture, changingPicture, set
   else if (currentTab === 'school') {
     return (
       <>
-        {aboutData['school'].map((school: any, index: number) => (
+        {aboutData['school'].map((school: Record<string, any>, index: number) => (
           <div
             key={index}
             className='relative h-full min-h-[250px] flex flex-col p-5'
@@ -74,7 +74,7 @@ function Content({aboutData, currentTab, setCurrentPicture, changingPicture, set
   else if (currentTab === 'hobbies') {
     return (
       <>
-        {aboutData['hobbies'].map((hobby: any, index: number) => (
+        {aboutData['hobbies'].map((hobby: Record<string, any>, index: number) => (
           <div
             key={index}
             className='relative h-full min-h-[250px] flex flex-col p-5'

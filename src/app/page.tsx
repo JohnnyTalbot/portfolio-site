@@ -35,9 +35,7 @@ export default function Home() {
     handleResize();
     window.addEventListener('resize', handleResize);
 
-    let lastScrollY = 0;
-
-    const handleWheel = (event: any) => {
+    const handleWheel = (event: WheelEvent) => {
       if (!canScrollRef.current) return;
 
       const deltaY = event.deltaY;
@@ -46,7 +44,6 @@ export default function Home() {
       } else if (deltaY < 0) {
         setShowNav(true);
       }
-      lastScrollY += deltaY;
     };
 
     window.addEventListener("wheel", handleWheel);

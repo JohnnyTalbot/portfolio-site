@@ -4,12 +4,12 @@ import Tab from './Tab';
 import Content from './Content';
 
 interface FolderProps {
-  aboutData: any;
+  aboutData: Record<string, any>;
   currentTab: string;
-  setCurrentTab: Function;
+  setCurrentTab: (tab: string) => void;
   changingPicture: boolean;
-  setChangingPicture: Function;
-  setCurrentPicture: Function;
+  setChangingPicture: (changing: boolean) => void;
+  setCurrentPicture: (picture: any) => void;
 }
 
 function Folder({aboutData, currentTab, setCurrentTab, changingPicture, setChangingPicture, setCurrentPicture} : FolderProps) {

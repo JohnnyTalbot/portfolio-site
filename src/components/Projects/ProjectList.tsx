@@ -5,9 +5,14 @@ import ProjectView from './ProjectView';
 interface ProjectProps {
   isMobile: boolean;
   projectsData: Record<string, any>;
-  setCanScroll: Function;
-  setShowProject: Function;
-  setCurrentProject: Function;
+  setCanScroll: (canScroll: boolean) => void;
+  setShowProject: (show: boolean) => void;
+  setCurrentProject: (project: {
+      name: string;
+      description: string;
+      skills: string[];
+      image: string;
+    }) => void;
   currentProject: {
       name: string;
       description: string;

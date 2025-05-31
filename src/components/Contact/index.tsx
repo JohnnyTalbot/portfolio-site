@@ -17,14 +17,6 @@ const iconMarkers = [
   {icon: "email", x: '82%', y: '20%'},
 ]
 
-const starMarkers = [
-  {x: '10%', y: '70%'},
-  {x: '11%', y: '61%'},
-  {x: '13%', y: '52%'},
-  {x: '16%', y: '45%'},
-  {x: '20%', y: '40%'},
-]
-
 function Contact({showNav, currentView, isMobile}: ContactProps) {
   const [copied, setCopied] = useState(false);
 

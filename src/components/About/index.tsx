@@ -11,12 +11,10 @@ interface AboutProps {
   currentView: string;
 }
 
-type TabKey = 'profile' | 'school' | 'hobbies';
-
 const aboutData = data as Record<string, any>;
 
 function About({showNav, currentView}: AboutProps) {
-  const [currentTab, setCurrentTab] = useState<TabKey>('profile');
+  const [currentTab, setCurrentTab] = useState('profile');
   const [currentPicture, setCurrentPicture] = useState<string>(aboutData['profile'][0].image);
   const [changingPicture, setChangingPicture] = useState(false);
 

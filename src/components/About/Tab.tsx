@@ -1,12 +1,12 @@
 import 'react';
 
 interface TabProps {
-  aboutData: any;
+  aboutData: Record<string, any>;
   currentTab: string;
-  setCurrentTab: Function;
+  setCurrentTab: (tab: string) => void;
   changingPicture: boolean;
-  setChangingPicture: Function;
-  setCurrentPicture: Function;
+  setChangingPicture: (changing: boolean) => void;
+  setCurrentPicture: (picture: string) => void;
 }
 
 function Tab({aboutData, currentTab, setCurrentTab, changingPicture, setChangingPicture, setCurrentPicture} : TabProps) {

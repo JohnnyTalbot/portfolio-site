@@ -4,8 +4,8 @@ import Down from './Down'
 
 interface MyComponentProps {
   currentView: string;
-  setCurrentView: Function;
-  setShowNav: Function;
+  setCurrentView: (view: string) => void;
+  setShowNav: (show: boolean) => void;
   showNav: boolean;
 }
 

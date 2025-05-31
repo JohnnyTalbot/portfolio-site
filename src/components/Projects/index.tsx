@@ -8,7 +8,7 @@ import data from '@/data/projectsData.json'
 interface ProjectsProps {
   showNav: boolean;
   currentView: string;
-  setCanScroll: Function;
+  setCanScroll: (canScroll: boolean) => void;
   isMobile: boolean;
 }
 
