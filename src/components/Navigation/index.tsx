@@ -83,7 +83,7 @@ function Navigation({currentView, setCurrentView, setShowNav, showNav} : MyCompo
       <div className='relative'>
         <Down />
       </div>
-      <div className='relative mt-auto mb-1'>
+      <div className='absolute bottom-0 mb-1 w-full'>
         <p className='font-chakra text-center text-md md:text-xl'>
           Designed and Developed by Jonathan Talbot
         </p>
