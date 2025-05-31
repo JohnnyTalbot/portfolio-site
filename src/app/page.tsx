@@ -17,6 +17,17 @@ export default function Home() {
   const [hasMounted, setHasMounted] = useState(false);
   const canScrollRef = useRef(true);
 
+  // to fix mobile view
+  useEffect(() => {
+    const setVh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+    setVh();
+    window.addEventListener('resize', setVh);
+    return () => window.removeEventListener('resize', setVh);
+  }, []);
+
   useEffect(() => {
     setHasMounted(true);
   }, []);
@@ -35,6 +46,7 @@ export default function Home() {
     handleResize();
     window.addEventListener('resize', handleResize);
 
+    // Scroll via mouse wheel
     const handleWheel = (event: WheelEvent) => {
       if (!canScrollRef.current) return;
 
@@ -46,20 +58,47 @@ export default function Home() {
       }
     };
 
+    // Scroll via touch (mobile)
+    let touchStartY = 0;
+
+    const handleTouchStart = (event: TouchEvent) => {
+      touchStartY = event.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (event: TouchEvent) => {
+      const touchEndY = event.changedTouches[0].clientY;
+      const deltaY = touchStartY - touchEndY;
+
+      if (!canScrollRef.current) return;
+
+      if (deltaY > 10) {
+        setShowNav(false);
+      } else if (deltaY < -10) {
+        setShowNav(true);
+      }
+    };
+
     window.addEventListener("wheel", handleWheel);
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchend", handleTouchEnd);
 
     return () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
     };
   }, [hasMounted]);
 
   if (!hasMounted) return null;
 
   return (
-    <div className="fixed inset-0 w-full min-h-screen overflow-hidden">
+    <div>
       <Background />
-      <main className="z-10 relative overflow-hidden w-full h-screen">
+      <main 
+        className="z-10 relative overflow-hidden w-full"
+        style={{ height: 'calc(var(--vh, 1vh) * 100)' }}
+      >
         <Navigation 
           currentView={currentView} 
           setCurrentView={setCurrentView} 
