@@ -50,3 +50,33 @@ body {
 .animate-spin-slow {
   animation: spin-slow 20s linear infinite;
 }
+
+@keyframes arrowFloatUp {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes arrowFloatDown {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+

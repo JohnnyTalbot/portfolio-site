@@ -63,18 +63,31 @@ export default function Home() {
     <div>
       <Background />
       <main className="z-10 relative overflow-hidden w-full h-screen">
-        {showNav && 
         <Navigation 
           currentView={currentView} 
           setCurrentView={setCurrentView} 
           setShowNav={setShowNav}
-        />}
-        {(!showNav && currentView === 'about') && <About />}
-        {(!showNav && currentView === 'experience') && <Experience />}
-        {(!showNav && currentView === 'projects') && (
-          <Projects isMobile={isMobile} setCanScroll={setCanScroll} />
-        )}
-        {(!showNav && currentView === 'contact') && <Contact isMobile={isMobile} />}
+          showNav={showNav}
+        />
+        <About
+          showNav={showNav}
+          currentView={currentView}
+        />
+        <Experience 
+          showNav={showNav}
+          currentView={currentView}
+        />
+        <Projects
+          showNav={showNav}
+          currentView={currentView}
+          isMobile={isMobile} 
+          setCanScroll={setCanScroll}
+        />
+        <Contact 
+          showNav={showNav}
+          currentView={currentView}
+          isMobile={isMobile} 
+        />
       </main>
       <footer></footer>
     </div>

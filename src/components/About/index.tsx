@@ -6,17 +6,34 @@ import Folder from './Folder';
 import PictureContainer from './PictureContainer';
 import data from '../../data/aboutData.json';
 
+interface AboutProps {
+  showNav: boolean;
+  currentView: string;
+}
+
 type TabKey = 'profile' | 'school' | 'hobbies';
 
 const aboutData = data as Record<string, any>;
 
-function About() {
+function About({showNav, currentView}: AboutProps) {
   const [currentTab, setCurrentTab] = useState<TabKey>('profile');
   const [currentPicture, setCurrentPicture] = useState<string>(aboutData['profile'][0].image);
   const [changingPicture, setChangingPicture] = useState(false);
 
   return (
-    <div id='about'>
+    <div 
+      id='about'
+      style={{
+        opacity: !showNav && currentView === 'about' ? 1 : 0,
+        transform: !showNav && currentView === 'about' ? 'translateY(0)' : 'translateY(20px)',
+        pointerEvents: !showNav && currentView === 'about' ? 'auto' : 'none',
+        transition: 'opacity 0.5s ease, transform 0.5s ease',
+        position: 'absolute',
+        top: 0,
+        width: '100%',
+        height: '100%',
+      }}  
+    >
       <Top currentView="About" />
 
       {/* Folder Information */}

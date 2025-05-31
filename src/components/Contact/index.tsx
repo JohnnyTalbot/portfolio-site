@@ -4,6 +4,8 @@ import Top from '../Top';
 import Icon from './Icon';
 
 interface ContactProps {
+  showNav: boolean;
+  currentView: string;
   isMobile: boolean;
 }
 
@@ -23,12 +25,23 @@ const starMarkers = [
   {x: '20%', y: '40%'},
 ]
 
-function Contact({isMobile}: ContactProps) {
+function Contact({showNav, currentView, isMobile}: ContactProps) {
   const [copied, setCopied] = useState(false);
 
   return (
-    <div id="contact"
+    <div 
+      id="contact"
       className='w-full h-screen relative flex flex-col'
+      style={{
+        opacity: !showNav && currentView === 'contact' ? 1 : 0,
+        transform: !showNav && currentView === 'contact' ? 'translateY(0)' : 'translateY(20px)',
+        pointerEvents: !showNav && currentView === 'contact' ? 'auto' : 'none',
+        transition: 'opacity 0.5s ease, transform 0.5s ease',
+        position: 'absolute',
+        top: 0,
+        width: '100%',
+        height: '100%',
+      }}  
     >
       <Top currentView="Contact" />
 

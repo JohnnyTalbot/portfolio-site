@@ -6,16 +6,30 @@ interface MyComponentProps {
   currentView: string;
   setCurrentView: Function;
   setShowNav: Function;
+  showNav: boolean;
 }
 
-function Navigation({currentView, setCurrentView, setShowNav} : MyComponentProps) {
+function Navigation({currentView, setCurrentView, setShowNav, showNav} : MyComponentProps) {
   return (
-    <div id="nav" className='h-screen w-full overflow-hidden flex flex-col justify-center items-center'>
+    <div 
+      id="nav"
+      className='absolute h-screen w-full overflow-hidden flex flex-col justify-center items-center'
+      style={{
+        opacity: showNav ? 1 : 0,
+        transition: 'opacity 0.5s ease-in-out',
+      }}
+    >
       <div className='z-0 absolute h-screen w-full' style={{background: "#2F2F2F", opacity: "50%"}}></div>
       <div className='z-10 relative'>
         <h1 className='font-chakra text-5xl md:text-7xl text-center mt-10 xl:mt-40'>Welcome!</h1>
       </div>
-      <div className='z-10 relative'>
+      <div 
+        className='z-10 relative'
+        style={{
+          transform: showNav ? 'translateY(0)' : 'translateY(100%)',
+          transition: 'transform 0.5s ease-in-out',
+        }}
+      >
         <div className='m-8 px-8 sm:px-12 md:px-28 lg:px-32 py-10 md:py-20 bg-black bg-opacity-30 grid grid-cols-2 gap-x-18 md:gap-x-24 gap-y-10 text-4xl md:text-6xl'
           style={{border: "3px solid #5A7AFB"}}>
               <p 

@@ -6,18 +6,33 @@ import ProjectList from './ProjectList';
 import data from '@/data/projectsData.json'
 
 interface ProjectsProps {
+  showNav: boolean;
+  currentView: string;
   setCanScroll: Function;
   isMobile: boolean;
 }
 
 const projectsData = data as Record<string, any>;
 
-function Projects({setCanScroll, isMobile} : ProjectsProps) {
+function Projects({showNav, currentView, setCanScroll, isMobile} : ProjectsProps) {
   const [showProject, setShowProject] = useState(false);
   const [currentProject, setCurrentProject] = useState(projectsData[0]);
 
   return (
-    <div id='projects' className='relative w-full h-screen flex flex-col justify-center items-center'>
+    <div 
+      id='projects' 
+      className='relative w-full h-screen flex flex-col justify-center items-center'
+      style={{
+        opacity: !showNav && currentView === 'projects' ? 1 : 0,
+        transform: !showNav && currentView === 'projects' ? 'translateY(0)' : 'translateY(20px)',
+        pointerEvents: !showNav && currentView === 'projects' ? 'auto' : 'none',
+        transition: 'opacity 0.5s ease, transform 0.5s ease',
+        position: 'absolute',
+        top: 0,
+        width: '100%',
+        height: '100%',
+      }}  
+    >
       <Top currentView="Projects" />
 
       {/* MAIN */}
