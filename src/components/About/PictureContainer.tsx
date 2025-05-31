@@ -34,7 +34,7 @@ function PictureContainer({ currentPicture, changingPicture, setChangingPicture 
   };
 
   return (
-    <div className='flex flex-row md:flex-col justify-center items-center' style={{ width: "250px" }}>
+    <div className='flex flex-row md:flex-col justify-center items-center w-[250px] lg:h-[400px] lg:w-[300px]'>
       <div
         className='w-[15px] md:w-full h-full md:h-[15px]'
         style={{ border: "solid #5A7AFB 2px" }}>
@@ -44,7 +44,7 @@ function PictureContainer({ currentPicture, changingPicture, setChangingPicture 
         style={{
           position: "relative",
           width: isMobile ? (visible ? "100%" : "0px") : "100%",
-          height: isMobile ? "210px" : (visible ? "280px" : "0px"),
+          height: isMobile ? "210px" : (visible ? "100%" : "0px"),
           opacity: visible ? 1 : 0,
           transition: "0.5s ease-in-out",
           padding: isMobile ? "6px" : "8px",
@@ -57,11 +57,11 @@ function PictureContainer({ currentPicture, changingPicture, setChangingPicture 
           width={isMobile ? 250 : 250}
           height={isMobile ? 210 : 280}
           style={{
-            width: isMobile ? (visible ? "100%" : "0px") : "100%",
-            height: isMobile ? "210px" : (visible ? "280px" : "0px"),
+            width: "100%",
+            height: "100%",
             objectFit: "cover",
             opacity: visible ? 1 : 0,
-            transition: "0.5s ease-in-out",
+            transition: "0.7s ease-in-out",
           }}
           onTransitionEnd={handleTransitionEnd}
         />

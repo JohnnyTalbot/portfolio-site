@@ -80,7 +80,7 @@ function Navigation({currentView, setCurrentView, setShowNav, showNav} : MyCompo
           <path d="M62.3853 55.4688V1H52.6501V45.7614H0.999836V55.4688H62.3853Z" stroke="#5A7AFB" strokeWidth="2"/>
         </svg>
       </div>
-      <div className='relative'>
+      <div className='relative md:mb-10 lg:mb-20'>
         <Down />
       </div>
       <div className='absolute bottom-0 mb-1 w-full'>
