@@ -32,5 +32,21 @@
     "skills": ["Wordpress", "Elementor"], 
     "image": "/projects/goodtech.png",
     "link": "https://goodtech.com.ph/"
+  },
+  { 
+    "name": "Pokedex API", 
+    "description": "This is a personal project that I made in practicing NextJS that fetches the data from an API containing various information about all Pokemon. It also makes use of local storage for keeping track of a user's captured Pokemon.", 
+    "skills": ["NextJS", "Tailwind", "TypeScript", "API Integration"], 
+    "image": "/projects/pokemon.png",
+    "github": "https://github.com/JohnnyTalbot/pokedex-app",
+    "link": "https://pokedex-app-psi-steel.vercel.app/"
+  },
+  { 
+    "name": "Personal Portfolio Website", 
+    "description": "This is the current site that you are on which I made with the purpose of being able to properly display who I am as a developer as well as what I am capable of creating. I both designed and developed this site myself as a challenge to myself for someone who usually only develops.", 
+    "skills": ["NextJS", "Tailwind", "TypeScript", "Figma"], 
+    "image": "/projects/portfolio.png",
+    "github": "https://github.com/JohnnyTalbot/portfolio-site",
+    "link": "https://portfolio-site-rouge-chi.vercel.app/"
   }
 ]
