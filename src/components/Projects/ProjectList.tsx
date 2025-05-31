@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react';
+import Image from 'next/image';
 
 import ProjectView from './ProjectView';
 
@@ -71,11 +72,13 @@ useEffect(() => {
             }}
             onMouseEnter={() => setCurrentProject(project)}
           >
-            <div className="w-full h-full rounded-full flex justify-center items-center">
-              <img
+            <div className="w-full h-full rounded-full flex justify-center items-center relative overflow-hidden">
+              <Image
                 src={project.image}
                 alt={project.name}
-                className="rounded-full w-full h-full object-cover"
+                fill
+                className="rounded-full object-cover"
+                sizes="100vw" // Optional: helps with responsiveness
               />
             </div>
           </div>

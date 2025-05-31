@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import Image from 'next/image';
 interface PictureContainerProps {
   currentPicture: string;
   changingPicture: boolean;
@@ -40,19 +40,34 @@ function PictureContainer({ currentPicture, changingPicture, setChangingPicture 
         style={{ border: "solid #5A7AFB 2px" }}>
       </div>
 
-      <img
-        src={localPicture}
-        alt="Current"
+      <div
         style={{
+          position: "relative",
           width: isMobile ? (visible ? "100%" : "0px") : "100%",
           height: isMobile ? "210px" : (visible ? "280px" : "0px"),
           opacity: visible ? 1 : 0,
-          objectFit: "cover",
-          padding: isMobile ? "6px" : "8px",
           transition: "0.5s ease-in-out",
+          padding: isMobile ? "6px" : "8px",
+          overflow: 'hidden'
         }}
-        onTransitionEnd={handleTransitionEnd}
-      />
+      >
+        <Image
+          src={localPicture}
+          alt="Current"
+          width={isMobile ? 250 : 250}
+          height={isMobile ? 210 : 280}
+          style={{
+            width: isMobile ? (visible ? "100%" : "0px") : "100%",
+            height: isMobile ? "210px" : (visible ? "280px" : "0px"),
+            objectFit: "cover",
+            opacity: visible ? 1 : 0,
+            transition: "0.5s ease-in-out",
+          }}
+          onTransitionEnd={handleTransitionEnd}
+        />
+
+      </div>
+
 
       <div
         className='w-[15px] md:w-full h-full md:h-[15px]'

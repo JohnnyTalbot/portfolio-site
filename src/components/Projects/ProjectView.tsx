@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 import { useState } from 'react';
 
 interface ProjectViewProps {
@@ -82,15 +83,16 @@ function ProjectView({ isMobile, project, setCanScroll, setShowProject, radius }
     </div>
 
     {/* Image in the center */}
-    <div className="w-full h-full inset-0 flex justify-center items-center overflow-hidden rounded-full">
-      <img
+    <div className="w-full h-full inset-0 flex justify-center items-center overflow-hidden rounded-full relative">
+      <Image
         src={project.image}
         alt={project.name}
-        className="rounded-full w-full h-full object-cover"
+        fill
+        className="rounded-full object-cover transition-transform duration-300 ease-in-out"
         style={{
           transform: hovered ? "scale(1.05)" : "scale(1)",
-          transition: "transform 0.3s ease-in-out",
         }}
+        sizes="100vw"
       />
     </div>
   </div>
