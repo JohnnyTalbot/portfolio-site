@@ -96,8 +96,7 @@ export default function Home() {
     <div>
       <Background />
       <main 
-        className="z-10 relative overflow-hidden w-full"
-        style={{ height: 'calc(var(--vh, 1vh) * 100)' }}
+        className="h-fullscreen z-10 relative overflow-hidden w-full"
       >
         <Navigation 
           currentView={currentView} 

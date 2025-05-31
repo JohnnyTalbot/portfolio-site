@@ -21,7 +21,7 @@ function Projects({showNav, currentView, setCanScroll, isMobile} : ProjectsProps
   return (
     <div 
       id='projects' 
-      className='relative w-full h-screen flex flex-col justify-center items-center'
+      className='relative w-full h-fullscreen flex flex-col justify-center items-center'
       style={{
         opacity: !showNav && currentView === 'projects' ? 1 : 0,
         transform: !showNav && currentView === 'projects' ? 'translateY(0)' : 'translateY(20px)',
@@ -36,7 +36,7 @@ function Projects({showNav, currentView, setCanScroll, isMobile} : ProjectsProps
       <Top currentView="Projects" />
 
       {/* MAIN */}
-      <div className="w-full h-screen flex justify-center items-center">
+      <div className="w-full h-fullscreen flex justify-center items-center">
         <ProjectList 
           isMobile={isMobile}
           projectsData={projectsData} 
@@ -48,13 +48,13 @@ function Projects({showNav, currentView, setCanScroll, isMobile} : ProjectsProps
       </div>
       
       <div
-        className="absolute w-full h-screen z-20 flex items-center justify-center"
+        className="absolute w-full h-fullscreen z-20 flex items-center justify-center"
         style={{
           display: showProject ? "flex" : "none",
         }}
       >
         <div
-          className="absolute w-full h-screen z-1"
+          className="absolute w-full h-fullscreen z-1"
           style={{
             background: "#2F2F2F",
             opacity: "50%",

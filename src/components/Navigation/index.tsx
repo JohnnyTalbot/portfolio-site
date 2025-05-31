@@ -13,13 +13,13 @@ function Navigation({currentView, setCurrentView, setShowNav, showNav} : MyCompo
   return (
     <div 
       id="nav"
-      className='absolute h-screen w-full overflow-hidden flex flex-col justify-center items-center'
+      className='absolute h-fullscreen w-full overflow-hidden flex flex-col justify-center items-center'
       style={{
         opacity: showNav ? 1 : 0,
         transition: 'opacity 0.5s ease-in-out',
       }}
     >
-      <div className='z-0 absolute h-screen w-full' style={{background: "#2F2F2F", opacity: "50%"}}></div>
+      <div className='z-0 absolute h-fullscreen w-full' style={{background: "#2F2F2F", opacity: "50%"}}></div>
       <div className='z-10 relative'>
         <h1 className='font-chakra text-5xl md:text-7xl text-center mt-10 xl:mt-40'>Welcome!</h1>
       </div>

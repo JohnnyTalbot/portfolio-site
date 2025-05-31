@@ -23,7 +23,7 @@ function Contact({showNav, currentView, isMobile}: ContactProps) {
   return (
     <div 
       id="contact"
-      className='w-full h-screen relative flex flex-col'
+      className='w-full h-fullscreen relative flex flex-col'
       style={{
         opacity: !showNav && currentView === 'contact' ? 1 : 0,
         transform: !showNav && currentView === 'contact' ? 'translateY(0)' : 'translateY(20px)',
