@@ -11,12 +11,14 @@ interface ProjectProps {
   setCurrentProject: (project: {
       name: string;
       description: string;
+      year: number;
       skills: string[];
       image: string;
     }) => void;
   currentProject: {
       name: string;
       description: string;
+      year: number;
       skills: string[];
       image: string;
     };
