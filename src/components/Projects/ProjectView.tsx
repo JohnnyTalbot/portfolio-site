@@ -7,6 +7,7 @@ interface ProjectViewProps {
   project: {
     name: string;
     description: string;
+    year: number;
     skills: string[];
     image: string;
   };
@@ -79,7 +80,8 @@ function ProjectView({ isMobile, project, setCanScroll, setShowProject, radius }
         opacity: hovered ? 1 : 0,
         transition: "0.3s ease-in-out",
       }}>
-      <h2 className="text-lg font-bold">{project.name}</h2>
+      <h2 className="text-lg font-bold text-center">{project.name}</h2>
+      <h3 className="text-md font-bold text-center">{project.year}</h3>
     </div>
 
     {/* Image in the center */}

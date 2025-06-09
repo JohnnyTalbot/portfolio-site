@@ -72,7 +72,7 @@ function Projects({showNav, currentView, setCanScroll, isMobile} : ProjectsProps
         >
           <div className='flex flex-row justify-between'>
             <div></div>
-            <h2 className="text-xl font-bold text-center">{currentProject.name}</h2>
+            <h2 className="text-xl font-bold text-center">{currentProject.name} ({currentProject.year})</h2>
             <svg width="30" height="30" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg" className='cursor-pointer' 
               onClick={() => {
                 setShowProject(false);
