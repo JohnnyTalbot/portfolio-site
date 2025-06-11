@@ -12,6 +12,10 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        bebas: ['"Bebas Neue"', 'sans-serif'],
+        chakra: ['"Chakra Petch"', 'sans-serif'],
+      },
     },
   },
   plugins: [],
