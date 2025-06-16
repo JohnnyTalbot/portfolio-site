@@ -1,6 +1,7 @@
 import { Canvas} from '@react-three/fiber';
 
 import RandomPyramids from './RandomPyramids';
+import AuroraBackground from './Aurora';
 import MouseLight from './MouseLight';
 
 export default function NewBackground() {
@@ -14,6 +15,7 @@ export default function NewBackground() {
         <ambientLight intensity={0.2} />
         <MouseLight />
         <RandomPyramids count={7} />
+        <AuroraBackground />
       </Canvas>
     </div>
 

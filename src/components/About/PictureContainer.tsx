@@ -34,7 +34,7 @@ function PictureContainer({ currentPicture, changingPicture, setChangingPicture 
   };
 
   return (
-    <div className='flex flex-row md:flex-col justify-center items-center w-[250px] lg:h-[400px] lg:w-[300px]'>
+    <div className='flex flex-row md:flex-col justify-center items-center w-[250px] md:h-[300px] lg:h-[400px] lg:w-[300px]'>
       <div
         className='w-[15px] md:w-full h-full md:h-[15px]'
         style={{ border: "solid #5A7AFB 2px" }}>
