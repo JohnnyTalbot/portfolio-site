@@ -25,7 +25,7 @@ function Folder({aboutData, currentTab, setCurrentTab, changingPicture, setChang
           setCurrentPicture={setCurrentPicture}
         />
         <div 
-          className='w-full h-auto md:h-[350px]'
+          className='w-full h-auto md:h-[350px] bg-black bg-opacity-30'
           style={{
             border: "solid #5A7AFB 2px",
             borderTop: "none",
