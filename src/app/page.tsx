@@ -3,7 +3,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 
 import Navigation from "../components/Navigation";
-import Background from "../components/Background";
 import NewBackground from '@/components/NewBackground';
 import About from "../components/About";
 import Experience from '../components/Experience';
@@ -126,7 +125,6 @@ export default function Home() {
           isMobile={isMobile} 
         />
       </main>
-      <footer></footer>
     </div>
   );
 }

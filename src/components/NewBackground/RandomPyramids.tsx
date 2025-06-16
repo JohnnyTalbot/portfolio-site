@@ -1,23 +1,23 @@
-import { useRef, useMemo, useEffect } from 'react';
-import { useFrame, useThree } from '@react-three/fiber';
+import { useRef, useMemo } from 'react';
+import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
 type PyramidProps = {
   count?: number;
 };
 
-type PyramidData = {
-  basePosition: THREE.Vector3;
-  direction: THREE.Vector3;
-  scale: number;
-  speed: number;
-  rotationSpeed: THREE.Vector3;
-  progress: number;
-  resetAt: number;
-  currentScale: number;
-  isGrowing: boolean;
-  material: THREE.MeshStandardMaterial;
-};
+// type PyramidData = {
+//   basePosition: THREE.Vector3;
+//   direction: THREE.Vector3;
+//   scale: number;
+//   speed: number;
+//   rotationSpeed: THREE.Vector3;
+//   progress: number;
+//   resetAt: number;
+//   currentScale: number;
+//   isGrowing: boolean;
+//   material: THREE.MeshStandardMaterial;
+// };
 
 export default function RandomPyramids({ count = 30 }: PyramidProps) {
   const groupRef = useRef<THREE.Group>(null);
