@@ -1,6 +1,8 @@
 import React from 'react'
 
 import Down from './Down'
+import HoverText from './HoverText';
+
 
 interface MyComponentProps {
   currentView: string;
@@ -30,48 +32,48 @@ function Navigation({currentView, setCurrentView, setShowNav, showNav} : MyCompo
           transition: 'transform 0.5s ease-in-out',
         }}
       >
-        <div className='m-8 px-8 sm:px-12 md:px-28 lg:px-32 py-10 md:py-20 bg-black bg-opacity-30 grid grid-cols-2 gap-x-18 md:gap-x-24 gap-y-10 text-4xl md:text-6xl'
+        <div className='font-orbitron m-8 px-8 sm:px-10 md:px-24 lg:px-20 py-10 md:py-20 bg-black bg-opacity-30 grid grid-cols-2 gap-x-2 md:gap-x-12 gap-y-5 md:gap-y-10 text-xl md:text-5xl'
           style={{border: "3px solid #5A7AFB"}}>
-              <p 
-              className='main-text-shadow cursor-pointer hover:underline underline-offset-8 ease-in ease-out duration-75'
+              <div 
+              className='main-text-shadow cursor-pointer w-[200px] md:w-[300px]'
               style={{color: currentView == 'about' ? "#5A7AFB" : "white"}}
               onClick={() => {
                 setCurrentView('about')
                 setShowNav(false)
               }}
               >
-                About
-              </p>
-              <p 
-              className='main-text-shadow cursor-pointer hover:underline underline-offset-8 ease-in ease-out duration-75'
+                <HoverText text="About" />
+              </div>
+              <div 
+              className='main-text-shadow cursor-pointer w-[200px] md:w-[300px]'
               style={{color: currentView == 'experience' ? "#5A7AFB" : "white"}}
               onClick={() => {
                 setCurrentView('experience')
                 setShowNav(false)
               }}
               >
-                Experience
-              </p>
-              <p 
-              className='main-text-shadow cursor-pointer hover:underline underline-offset-8 ease-in ease-out duration-75'
+                <HoverText text="Experience" />
+              </div>
+              <div
+              className='main-text-shadow cursor-pointer w-[200px] md:w-[300px]'
               style={{color: currentView == 'projects' ? "#5A7AFB" : "white"}}
               onClick={() => {
                 setCurrentView('projects')
                 setShowNav(false)
               }}
               >
-                Projects
-              </p>
-              <p 
-              className='main-text-shadow cursor-pointer hover:underline underline-offset-8 ease-in ease-out duration-75'
+                <HoverText text="Projects" />
+              </div>
+              <div 
+              className='main-text-shadow cursor-pointer w-[200px] md:w-[300px]'
               style={{color: currentView == 'contact' ? "#5A7AFB" : "white"}}
               onClick={() => {
                 setCurrentView('contact')
                 setShowNav(false)
               }}
               >
-                Contact
-              </p>
+                <HoverText text="Contact" />
+              </div>
         </div>
         <svg className='absolute -top-0 left-0' width="64" height="57" viewBox="0 0 64 57" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M1 1V55.4688H10.7351V10.7073H62.3854V1H1Z" stroke="#5A7AFB" strokeWidth="2"/>

@@ -3,7 +3,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 
 import Navigation from "../components/Navigation";
-import Background from "../components/Background";
+import NewBackground from '@/components/NewBackground';
 import About from "../components/About";
 import Experience from '../components/Experience';
 import Projects from '../components/Projects';
@@ -94,7 +94,8 @@ export default function Home() {
 
   return (
     <div>
-      <Background />
+      {/* <Background /> */}
+      <NewBackground />
       <main 
         className="h-fullscreen z-10 relative overflow-hidden w-full"
       >
@@ -124,7 +125,6 @@ export default function Home() {
           isMobile={isMobile} 
         />
       </main>
-      <footer></footer>
     </div>
   );
 }
