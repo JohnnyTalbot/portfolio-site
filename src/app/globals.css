@@ -34,7 +34,11 @@ body {
 }
 
 .font-chakra {
-  font-family: 'Chakra Petch';
+  font-family: 'Chakra Petch', sans-serif;;
+}
+
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
 }
 
 .main-text-shadow {
