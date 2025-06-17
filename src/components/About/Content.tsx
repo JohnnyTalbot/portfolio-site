@@ -18,8 +18,8 @@ function Content({aboutData, currentTab, setCurrentPicture, changingPicture, set
       <div className='flex flex-col p-5'>
         <h1 className='mb-1 md:mb-3 text-lg md:text-2xl font-bold'>Profile</h1>
         <p className='text-xl md:text-3xl'>{aboutData['profile'][0].name}</p>
-        <p className='mb-1 md:mb-3 text-xs md:text-sm text-gray-500'>Born: {aboutData['profile'][0].birthday}</p>
-        <p className='text-sm md:text-md'>{aboutData['profile'][0].content}</p>
+        <p className='mb-1 md:mb-3 text-xs md:text-base text-gray-500'>Born: {aboutData['profile'][0].birthday}</p>
+        <p className='text-sm md:text-base lg:text-lg'>{aboutData['profile'][0].content}</p>
       </div>
     );
   }
@@ -36,11 +36,11 @@ function Content({aboutData, currentTab, setCurrentPicture, changingPicture, set
             }}
           >
             <h1 className='mb-1 md:mb-3 text-lg md:text-2xl font-bold'>Education</h1>
-            <p className='mb-2 text-xs md:text-sm text-gray-500'>{school.level}</p>
+            <p className='mb-1 md:mb-3 text-xs md:text-base text-gray-500'>{school.level}</p>
             <p className='text-lg md:text-2xl'>{school.school}</p>
-            <p className='mb-1 md:mb-3 text-xs md:text-sm text-gray-500'>{school.date}</p>
-            <p className='text-sm md:text-md'>{school.course ? school.course : "" }</p>
-            <p className='text-sm md:text-md'>{school.specialization ? `Specialization: ${school.specialization}` : "" }</p>
+            <p className='mb-1 md:mb-3 text-xs md:text-base text-gray-500'>{school.date}</p>
+            <p className='text-sm md:text-base lg:text-lg'>{school.course ? school.course : "" }</p>
+            <p className='text-sm md:text-base lg:text-lg'>{school.specialization ? `Specialization: ${school.specialization}` : "" }</p>
 
             <div className='absolute bottom-0 right-0 flex justify-end items-center gap-5 p-2'>
               <Arrow 
@@ -84,8 +84,8 @@ function Content({aboutData, currentTab, setCurrentPicture, changingPicture, set
             }}
           >
             <h1 className='mb-1 md:mb-3 text-lg md:text-2xl font-bold'>Hobbies</h1>
-            <p className='text-lg md:text-2xl'>{hobby.hobby}</p>
-            <p className='text-sm md:text-md'>{hobby.content}</p>
+            <p className='text-lg md:text-2xl text-gray-500'>{hobby.hobby}</p>
+            <p className='mt-1 text-sm md:text-base lg:text-lg'>{hobby.content}</p>
 
             <div className='absolute bottom-0 right-0 flex justify-end items-center gap-5 p-2'>
               <Arrow 
