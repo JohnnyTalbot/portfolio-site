@@ -22,7 +22,7 @@ function ExperienceContent({ scrollRef, years } : Props) {
         {Object.entries(years).map(([year, content]) => (
           <div
             key={year}
-            className="h-full flex flex-col md:flex-row justify-center items-center mt-auto mb-auto lg:gap-5 md:px-8 lg:px-10"
+            className="h-full flex flex-col md:flex-row justify-center md:items-baseline mt-auto md:mt-10 mb-auto md:mb-0 lg:gap-5 md:px-8 lg:px-10"
             style={{
               width: `${100 / yearCount}%`,
               height: '150px',
