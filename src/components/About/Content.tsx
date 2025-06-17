@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 
 import Arrow from './Arrow';
 
@@ -12,6 +12,10 @@ interface ContentProps {
 
 function Content({aboutData, currentTab, setCurrentPicture, changingPicture, setChangingPicture }: ContentProps) {
   const [currentLevel, setCurrentLevel] = useState(0);
+
+  useEffect(() => {
+    setCurrentLevel(0);
+    }, [currentTab]);
 
   if (currentTab === 'profile') {
     return (
