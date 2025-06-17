@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Top from '../Top';
 import ProjectList from './ProjectList';
 
-import data from '@/data/projectsData.json'
+import { projects as data } from '@/data/projectsData'
 
 interface ProjectsProps {
   showNav: boolean;

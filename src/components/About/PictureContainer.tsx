@@ -64,6 +64,7 @@ function PictureContainer({ currentPicture, changingPicture, setChangingPicture 
             transition: "0.7s ease-in-out",
           }}
           onTransitionEnd={handleTransitionEnd}
+          placeholder="blur"
         />
 
       </div>

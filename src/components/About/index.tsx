@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Top from '../Top';
 import Folder from './Folder';
 import PictureContainer from './PictureContainer';
-import data from '../../data/aboutData.json';
+import { aboutData as data } from '../../data/aboutData';
 
 interface AboutProps {
   showNav: boolean;
