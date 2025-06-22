@@ -63,10 +63,12 @@ export const aboutData: AboutData = {
   ],
   school: [
     {
-      level: 'Elementary',
-      school: "St. John's Institute",
-      date: '2008-2013',
-      image: aboutImages.elementary,
+      level: 'University',
+      school: 'Ateneo de Manila University',
+      date: '2017-2022',
+      course: 'BS Computer Science',
+      specialization: 'Data Science and Analytics',
+      image: aboutImages.university,
     },
     {
       level: 'High School',
@@ -75,12 +77,10 @@ export const aboutData: AboutData = {
       image: aboutImages.highschool,
     },
     {
-      level: 'University',
-      school: 'Ateneo de Manila University',
-      date: '2017-2022',
-      course: 'BS Computer Science',
-      specialization: 'Data Science and Analytics',
-      image: aboutImages.university,
+      level: 'Elementary',
+      school: "St. John's Institute",
+      date: '2008-2013',
+      image: aboutImages.elementary,
     },
   ],
   hobbies: [

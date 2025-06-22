@@ -21,7 +21,7 @@ function TimelineSlider({
   const [isDragging, setIsDragging] = useState(false);
   const [thumbX, setThumbX] = useState(0);
 
-  const yearKeys = Object.keys(years);
+  const yearKeys = Object.keys(years).sort((a, b) => Number(b) - Number(a));
   const yearCount = yearKeys.length;
   const snapPoints = Array.from({ length: yearCount }, (_, i) =>
     i * containerWidth / (yearCount - 1)

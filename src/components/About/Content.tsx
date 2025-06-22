@@ -23,7 +23,7 @@ function Content({aboutData, currentTab, setCurrentPicture, changingPicture, set
         <h1 className='mb-1 md:mb-3 text-lg md:text-2xl font-bold'>Profile</h1>
         <p className='text-xl md:text-3xl'>{aboutData['profile'][0].name}</p>
         <p className='mb-1 md:mb-3 text-xs md:text-base text-gray-500'>Born: {aboutData['profile'][0].birthday}</p>
-        <p className='text-sm md:text-base lg:text-lg'>{aboutData['profile'][0].content}</p>
+        <p className='text-sm md:text-base lg:text-base font-orbitron'>{aboutData['profile'][0].content}</p>
       </div>
     );
   }

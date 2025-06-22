@@ -1,24 +1,60 @@
 {
-  "2021": [
+  "2025": [
     {
-      "title": "Ateneo de Manila Junior High School (Blue Room Studios)",
-      "position": "Mobile Developer Intern",
-      "date": "July 2021-August 2021",
+      "title": "RH Data",
+      "position": "Elixir Developer / Project Manager",
+      "date": "July 2024 - Current",
       "description": [
-        "Learn everything about Flutter on a deeper level, as preparation for development.",
-        "Develop a mobile application for the Ateneo de Manila Junior High School, available for public use."
+        "Produce and update the web applications currently used by LandBank for ease and automation of documents and billings.",
+        "Understand the product and collaborate with LandBank point people to plan for development releases.",
+        "Keep track of release dates and make sure updates are on schedule with the development team."
       ],
-      "technologies": ["Flutter", "Dart", "Firebase"]
+      "technologies": ["Phoenix", "Elixir", "SQL", "HTML", "CSS", "JavaScript"]
+    }
+  ],
+  "2024": [
+    {
+      "title": "GoodTech Information Systems Inc.",
+      "position": "Junior Web Developer",
+      "date": "January 2024 - July 2024",
+      "description": [
+        "Develop websites and updates for the company’s active sites in collaboration with the development team.",
+        "Work extensively with AngularJS and Wordpress for their relative sites."
+      ],
+      "technologies": ["Wordpress", "PHP", "Angular", "HTML", "CSS", "JavaScript"]
     },
     {
-      "title": "Coca-Cola Beverages Philippines",
-      "position": "Learning Architect Tech Intern",
-      "date": "November 2021-May 2022",
+      "title": "RH Data",
+      "position": "Elixir Developer / Project Manager",
+      "date": "July 2024 - Current",
       "description": [
-        "Develop back-end functions and interactive handles within e-learning platforms to be used by the company’s employees.",
-        "Assist in all tech related concerns with the project manager to provide for e-learning solutions."
+        "Produce and update the web applications currently used by LandBank for ease and automation of documents and billings.",
+        "Understand the product and collaborate with LandBank point people to plan for development releases.",
+        "Keep track of release dates and make sure updates are on schedule with the development team."
       ],
-      "technologies": ["HTML", "CSS", "Javascipt", "Articulate Storyline", "Firebase"]
+      "technologies": ["Phoenix", "Elixir", "SQL", "HTML", "CSS", "JavaScript"]
+    }
+  ], 
+  "2023": [
+    {
+      "title": "GoodTech Information Systems Inc.",
+      "position": "Junior Data Specialist ",
+      "date": "December  2022 - December 2023",
+      "description": [
+        "Create Visual Dashboards within Power BI in order to provide insights and solutions for the various departments within the company.",
+        "Collate data necessary and be able to transform and clean such that it can be processed within the dashboards."
+      ],
+      "technologies": ["Python", "Power BI", "Microsoft Excel", "SQL"]
+    },
+    {
+      "title": "GoodTech Information Systems Inc.",
+      "position": "Junior Web Developer",
+      "date": "January 2024 - July 2024",
+      "description": [
+        "Develop websites and updates for the company’s active sites in collaboration with the development team.",
+        "Work extensively with AngularJS and Wordpress for their relative sites."
+      ],
+      "technologies": ["Wordpress", "PHP", "Angular", "HTML", "CSS", "JavaScript"]
     }
   ], 
   "2022": [
@@ -53,62 +89,26 @@
       "technologies": ["Python", "Power BI", "Microsoft Excel", "SQL"]
     }
   ], 
-  "2023": [
+  "2021": [
     {
-      "title": "GoodTech Information Systems Inc.",
-      "position": "Junior Data Specialist ",
-      "date": "December  2022 - December 2023",
+      "title": "Ateneo de Manila Junior High School (Blue Room Studios)",
+      "position": "Mobile Developer Intern",
+      "date": "July 2021-August 2021",
       "description": [
-        "Create Visual Dashboards within Power BI in order to provide insights and solutions for the various departments within the company.",
-        "Collate data necessary and be able to transform and clean such that it can be processed within the dashboards."
+        "Learn everything about Flutter on a deeper level, as preparation for development.",
+        "Develop a mobile application for the Ateneo de Manila Junior High School, available for public use."
       ],
-      "technologies": ["Python", "Power BI", "Microsoft Excel", "SQL"]
+      "technologies": ["Flutter", "Dart", "Firebase"]
     },
     {
-      "title": "GoodTech Information Systems Inc.",
-      "position": "Junior Web Developer",
-      "date": "January 2024 - July 2024",
+      "title": "Coca-Cola Beverages Philippines",
+      "position": "Learning Architect Tech Intern",
+      "date": "November 2021-May 2022",
       "description": [
-        "Develop websites and updates for the company’s active sites in collaboration with the development team.",
-        "Work extensively with AngularJS and Wordpress for their relative sites."
+        "Develop back-end functions and interactive handles within e-learning platforms to be used by the company’s employees.",
+        "Assist in all tech related concerns with the project manager to provide for e-learning solutions."
       ],
-      "technologies": ["Wordpress", "PHP", "Angular", "HTML", "CSS", "JavaScript"]
-    }
-  ], 
-  "2024": [
-    {
-      "title": "GoodTech Information Systems Inc.",
-      "position": "Junior Web Developer",
-      "date": "January 2024 - July 2024",
-      "description": [
-        "Develop websites and updates for the company’s active sites in collaboration with the development team.",
-        "Work extensively with AngularJS and Wordpress for their relative sites."
-      ],
-      "technologies": ["Wordpress", "PHP", "Angular", "HTML", "CSS", "JavaScript"]
-    },
-    {
-      "title": "RH Data",
-      "position": "Elixir Developer / Project Manager",
-      "date": "July 2024 - Current",
-      "description": [
-        "Produce and update the web applications currently used by LandBank for ease and automation of documents and billings.",
-        "Understand the product and collaborate with LandBank point people to plan for development releases.",
-        "Keep track of release dates and make sure updates are on schedule with the development team."
-      ],
-      "technologies": ["Phoenix", "Elixir", "SQL", "HTML", "CSS", "JavaScript"]
-    }
-  ], 
-  "2025": [
-    {
-      "title": "RH Data",
-      "position": "Elixir Developer / Project Manager",
-      "date": "July 2024 - Current",
-      "description": [
-        "Produce and update the web applications currently used by LandBank for ease and automation of documents and billings.",
-        "Understand the product and collaborate with LandBank point people to plan for development releases.",
-        "Keep track of release dates and make sure updates are on schedule with the development team."
-      ],
-      "technologies": ["Phoenix", "Elixir", "SQL", "HTML", "CSS", "JavaScript"]
+      "technologies": ["HTML", "CSS", "Javascipt", "Articulate Storyline", "Firebase"]
     }
   ]
 }
