@@ -5,6 +5,7 @@ import shipwreck from '@/assets/projects/shipwreck.jpg';
 import goodtech from '@/assets/projects/goodtech.png';
 import pokemon from '@/assets/projects/pokemon.png';
 import portfolio from '@/assets/projects/portfolio.png';
+import socialdeduction from '@/assets/projects/socialdeduction.png';
 import { StaticImageData } from 'next/image';
 
 export interface Project {
@@ -25,6 +26,7 @@ export const projectImages = {
   goodtech,
   pokemon,
   portfolio,
+  socialdeduction
 };
 
 export const projects: Project[] = [
@@ -55,14 +57,14 @@ export const projects: Project[] = [
     image: projectImages.crisis,
     link: 'https://interactive.theguidon.com/2021/10/year-in-visual-stories/',
   },
-  {
-    name: 'Shipwreck Adventure Game',
-    description:
-      "This was a game that includes web apps that I created and integrated into Storyline Articulate as an internship for Coca Cola. The game was created as a learning and bonding experience for the employees and staffs within the company. The game featured various functionalities that I developed including messaging amongst teammates, puzzles, Azure uploads, backend troubleshooting, and more.",
-    year: 2022,
-    skills: ['HTML', 'CSS', 'JavaScript', 'Firebase', 'Azure'],
-    image: projectImages.shipwreck,
-  },
+  // {
+  //   name: 'Shipwreck Adventure Game',
+  //   description:
+  //     "This was a game that includes web apps that I created and integrated into Storyline Articulate as an internship for Coca Cola. The game was created as a learning and bonding experience for the employees and staffs within the company. The game featured various functionalities that I developed including messaging amongst teammates, puzzles, Azure uploads, backend troubleshooting, and more.",
+  //   year: 2022,
+  //   skills: ['HTML', 'CSS', 'JavaScript', 'Firebase', 'Azure'],
+  //   image: projectImages.shipwreck,
+  // },
   {
     name: 'GoodTech PH Official Website',
     description:
@@ -87,10 +89,18 @@ export const projects: Project[] = [
     description:
       "This is the current site that you are on which I made with the purpose of being able to properly display who I am as a developer as well as what I am capable of creating. I both designed and developed this site myself as a challenge to myself for someone who usually only develops.",
     year: 2025,
-    skills: ['NextJS', 'Tailwind', 'TypeScript', 'Figma'],
+    skills: ['NextJS', 'Tailwind', 'TypeScript'],
     image: projectImages.portfolio,
     link: 'https://portfolio-site-rouge-chi.vercel.app/',
     github: 'https://github.com/JohnnyTalbot/portfolio-site',
+  },
+  {
+    name: 'Blood on the Clocktower Game',
+    description:
+      "This is a current work in progress game that I am designing and developing for use with my friends and eventually for public use. It is a social deduction game that can be played online with a chat feature, player interactions, etc. The game is 90% done and is currently in testing phases.",
+    year: 2025,
+    skills: ['NextJS', 'Tailwind', 'TypeScript', 'Firebase'],
+    image: projectImages.socialdeduction,
   },
 ];
 
