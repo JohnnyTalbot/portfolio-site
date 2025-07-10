@@ -20,7 +20,7 @@ function About({showNav, currentView}: AboutProps) {
 
   return (
     <div 
-      id='about'
+      id="about"
       style={{
         opacity: !showNav && currentView === 'about' ? 1 : 0,
         transform: !showNav && currentView === 'about' ? 'translateY(0)' : 'translateY(20px)',
@@ -30,12 +30,14 @@ function About({showNav, currentView}: AboutProps) {
         top: 0,
         width: '100%',
         height: '100%',
-      }}  
+        display: 'flex',
+        flexDirection: 'column',
+      }}
     >
       <Top currentView="About" />
 
       {/* Folder Information */}
-      <div className='w-full h-fullscreen flex flex-col md:flex-row justify-evenly justify-center items-center gap-2 s:gap-5 md:gap-10'>
+      <div className="flex-1 flex flex-col md:flex-row justify-evenly items-center gap-5 s:gap-5 md:gap-10 overflow-auto">
         <PictureContainer
           currentPicture={currentPicture}
           changingPicture={changingPicture}
@@ -51,6 +53,7 @@ function About({showNav, currentView}: AboutProps) {
         />
       </div>
     </div>
+
   )
 }
 
