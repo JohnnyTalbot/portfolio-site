@@ -101,6 +101,8 @@ export const projects: Project[] = [
     year: 2025,
     skills: ['NextJS', 'Tailwind', 'TypeScript', 'Firebase'],
     image: projectImages.socialdeduction,
+    link: 'https://blood-on-the-clocktower-kappa.vercel.app/',
+    github: 'https://github.com/JohnnyTalbot/social-deduction-app'
   },
 ];
 
