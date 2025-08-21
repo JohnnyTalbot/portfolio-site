@@ -7,21 +7,17 @@ interface FolderProps {
   aboutData: Record<string, any>;
   currentTab: string;
   setCurrentTab: (tab: string) => void;
-  changingPicture: boolean;
-  setChangingPicture: (changing: boolean) => void;
   setCurrentPicture: (picture: any) => void;
 }
 
-function Folder({aboutData, currentTab, setCurrentTab, changingPicture, setChangingPicture, setCurrentPicture} : FolderProps) {
+function Folder({aboutData, currentTab, setCurrentTab, setCurrentPicture} : FolderProps) {
   return (
     <div className='w-11/12 md:w-[500px] h-auto md:h-auto flex flex-col justify-center items-center'>
       <div className='w-full md:w-[500px]'>
         <Tab
           aboutData={aboutData}
           currentTab={currentTab} 
-          setCurrentTab={setCurrentTab} 
-          changingPicture={changingPicture}
-          setChangingPicture={setChangingPicture}
+          setCurrentTab={setCurrentTab}
           setCurrentPicture={setCurrentPicture}
         />
         <div 
@@ -34,8 +30,6 @@ function Folder({aboutData, currentTab, setCurrentTab, changingPicture, setChang
             aboutData={aboutData}
             currentTab={currentTab}
             setCurrentPicture={setCurrentPicture}
-            changingPicture={changingPicture}
-            setChangingPicture={setChangingPicture}
           />
         </div>
       </div>

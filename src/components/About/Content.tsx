@@ -6,11 +6,9 @@ interface ContentProps {
   aboutData: Record<string, any>;
   currentTab: string;
   setCurrentPicture: (image: string) => void;
-  changingPicture: boolean;
-  setChangingPicture: (value: boolean) => void;
 }
 
-function Content({aboutData, currentTab, setCurrentPicture, changingPicture, setChangingPicture }: ContentProps) {
+function Content({aboutData, currentTab, setCurrentPicture }: ContentProps) {
   const [currentLevel, setCurrentLevel] = useState(0);
 
   useEffect(() => {
@@ -50,22 +48,18 @@ function Content({aboutData, currentTab, setCurrentPicture, changingPicture, set
               <Arrow 
                 direction="back"
                 setCurrentPicture={() => {
-                  if (changingPicture) return;
                   const prevIndex = index > 0 ? index - 1 : aboutData['school'].length - 1;
                   setCurrentPicture(aboutData['school'][prevIndex].image);
                   setCurrentLevel(prevIndex);
-                  setChangingPicture(true);
                 }}
               />
 
               <Arrow 
                 direction="forward"
                 setCurrentPicture={() => {
-                  if (changingPicture ) return;
                   const nextIndex = index < aboutData['school'].length - 1 ? index + 1 : 0;
                   setCurrentPicture(aboutData['school'][nextIndex].image);
                   setCurrentLevel(nextIndex);
-                  setChangingPicture(true);
                 }}
               />
 
@@ -95,22 +89,18 @@ function Content({aboutData, currentTab, setCurrentPicture, changingPicture, set
               <Arrow 
                 direction="back"
                 setCurrentPicture={() => {
-                  if (changingPicture) return;
                   const prevIndex = index > 0 ? index - 1 : aboutData['hobbies'].length - 1;
                   setCurrentPicture(aboutData['hobbies'][prevIndex].image);
                   setCurrentLevel(prevIndex);
-                  setChangingPicture(true);
                 }}
               />
 
               <Arrow 
                 direction="forward"
                 setCurrentPicture={() => {
-                  if (changingPicture ) return;
                   const nextIndex = index < aboutData['hobbies'].length - 1 ? index + 1 : 0;
                   setCurrentPicture(aboutData['hobbies'][nextIndex].image);
                   setCurrentLevel(nextIndex);
-                  setChangingPicture(true);
                 }}
               />
 

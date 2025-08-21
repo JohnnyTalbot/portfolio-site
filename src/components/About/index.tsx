@@ -16,7 +16,6 @@ const aboutData = data as Record<string, any>;
 function About({showNav, currentView}: AboutProps) {
   const [currentTab, setCurrentTab] = useState('profile');
   const [currentPicture, setCurrentPicture] = useState<string>(aboutData['profile'][0].image);
-  const [changingPicture, setChangingPicture] = useState(false);
 
   return (
     <div 
@@ -40,15 +39,11 @@ function About({showNav, currentView}: AboutProps) {
       <div className="flex-1 flex flex-col md:flex-row justify-evenly items-center gap-5 s:gap-5 md:gap-10 overflow-auto">
         <PictureContainer
           currentPicture={currentPicture}
-          changingPicture={changingPicture}
-          setChangingPicture={setChangingPicture}
         />
         <Folder
           aboutData={aboutData}
           currentTab={currentTab}
           setCurrentTab={setCurrentTab}
-          changingPicture={changingPicture}
-          setChangingPicture={setChangingPicture}
           setCurrentPicture={setCurrentPicture}
         />
       </div>

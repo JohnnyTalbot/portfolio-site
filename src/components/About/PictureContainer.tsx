@@ -2,11 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 interface PictureContainerProps {
   currentPicture: string;
-  changingPicture: boolean;
-  setChangingPicture: (value: boolean) => void;
 }
 
-function PictureContainer({ currentPicture, changingPicture, setChangingPicture }: PictureContainerProps) {
+function PictureContainer({ currentPicture }: PictureContainerProps) {
   const [visible, setVisible] = useState(true);
   const [localPicture, setLocalPicture] = useState(currentPicture);
 
@@ -19,19 +17,12 @@ function PictureContainer({ currentPicture, changingPicture, setChangingPicture 
   }, []);
 
   useEffect(() => {
-    if (changingPicture) {
-      setVisible(false);
-    }
-  }, [changingPicture]);
-
-  const handleTransitionEnd = () => {
-    if (!visible) {
-      setLocalPicture(currentPicture);
+    setLocalPicture(currentPicture);
+    setVisible(false);
+    setTimeout(() => {
       setVisible(true);
-    } else {
-      setChangingPicture(false);
-    }
-  };
+    }, 500);
+  }, [currentPicture]);
 
   return (
     <div className='flex flex-row md:flex-col justify-center items-center h-[215px] w-[250px] md:h-[300px] lg:h-[400px] lg:w-[300px]'>
@@ -63,7 +54,6 @@ function PictureContainer({ currentPicture, changingPicture, setChangingPicture 
             opacity: visible ? 1 : 0,
             transition: "0.7s ease-in-out",
           }}
-          onTransitionEnd={handleTransitionEnd}
           placeholder="blur"
         />
 

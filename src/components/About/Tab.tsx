@@ -4,12 +4,10 @@ interface TabProps {
   aboutData: Record<string, any>;
   currentTab: string;
   setCurrentTab: (tab: string) => void;
-  changingPicture: boolean;
-  setChangingPicture: (changing: boolean) => void;
   setCurrentPicture: (picture: string) => void;
 }
 
-function Tab({aboutData, currentTab, setCurrentTab, changingPicture, setChangingPicture, setCurrentPicture} : TabProps) {
+function Tab({aboutData, currentTab, setCurrentTab, setCurrentPicture} : TabProps) {
 
   const activeBorder = "solid #5A7AFB 2px";
   const inactiveBorder = "solid rgba(90, 122, 251, 0.5) 2px";
@@ -27,9 +25,8 @@ function Tab({aboutData, currentTab, setCurrentTab, changingPicture, setChanging
           boxSizing: "border-box",
         }}
         onClick = {() => {
-          if (currentTab !== 'profile' && !changingPicture) {
+          if (currentTab !== 'profile') {
             setCurrentTab('profile')
-            setChangingPicture(true);
             setCurrentPicture(aboutData['profile'][0].image);
           }
         }
@@ -52,9 +49,8 @@ function Tab({aboutData, currentTab, setCurrentTab, changingPicture, setChanging
           boxSizing: "border-box",
         }}
         onClick = {() => {
-          if (currentTab !== 'school' && !changingPicture) {
+          if (currentTab !== 'school') {
             setCurrentTab('school')
-            setChangingPicture(true);
             setCurrentPicture(aboutData['school'][0].image);
           }
         }
@@ -77,9 +73,8 @@ function Tab({aboutData, currentTab, setCurrentTab, changingPicture, setChanging
           boxSizing: "border-box",
         }}
         onClick = {() => {
-          if (currentTab !== 'hobbies' && !changingPicture) {
+          if (currentTab !== 'hobbies') {
             setCurrentTab('hobbies')
-            setChangingPicture(true);
             setCurrentPicture(aboutData['hobbies'][0].image);
           }
         }
